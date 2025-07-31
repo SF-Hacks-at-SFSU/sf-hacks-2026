@@ -1,0 +1,37 @@
+.faqContainer {
+	width: 100%;
+	backdrop-filter: blur(4px);
+}
+
+.faqQuestion {
+	margin: 1rem auto;
+	background-color: var(--background-color);
+
+	& > div {
+		text-align: start;
+		text-indent: 2rem;
+		padding: 1rem;
+	}
+
+	& > summary {
+		max-width: unset;
+		width: 100%;
+
+		font-size: large;
+		font-weight: bold;
+
+		padding: 0.5rem;
+
+		cursor: pointer;
+
+		/* background-color: #8c74b0; */
+		background-color: var(--background-color-solid);
+		
+	}
+}
+
+@media only screen and (max-width: 768px) {
+}
+
+@media only screen and (max-width: 425px) {
+}

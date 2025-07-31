@@ -1,0 +1,17 @@
+#home > * {
+}
+
+.logo {
+	background: unset;
+	padding: unset;
+}
+
+.discord:hover {
+	filter: unset;
+	color: white;
+	background-color: #5865f2;
+}
+
+/* This css is not being used */
+.countdown {
+}

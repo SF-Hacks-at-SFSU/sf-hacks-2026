@@ -1,0 +1,295 @@
+@import "tailwindcss";
+@plugin 'tailwindcss-animate';
+/* Please implement themes properly in the future */
+@theme {
+	--background-image-gradient-radial: radial-gradient(var(--tw-gradient-stops));
+	--background-image-gradient-conic: conic-gradient(
+		from 180deg at 50% 50%,
+		var(--tw-gradient-stops)
+	);
+
+	--color-sfyellow: #fff5d9;
+	--color-login-button: #d9d9d9;
+	--color-sf-grey-blue: #838fba;
+	--color-sf-dark-blue: #132a3e;
+	--color-sf-darker-blue: #132330;
+	--color-sf-pink: #ffc2e2;
+	--color-sf-light-blue: #2b455c;
+	--color-sf-tan: #fff5d9;
+	--color-sf-bloo: #16133d;
+	--color-sf-dark-purp: #9882ba;
+	--color-sf-purp: #edc6fa;
+	--color-background: hsl(var(--background));
+	--color-foreground: hsl(var(--foreground));
+
+	--radius-4xl: 2rem;
+	--radius-lg: var(--radius);
+	--radius-md: calc(var(--radius) - 2px);
+	--radius-sm: calc(var(--radius) - 4px);
+
+	--breakpoint-xl: 1920px;
+	--breakpoint-bruh: 600px;
+	--breakpoint-z: 1366px;
+	--breakpoint-k: 1280px;
+	--breakpoint-ok: 500px;
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+
+@utility no-scrollbar {
+	/* Hide scrollbar for Chrome, Safari and Opera */
+	&::-webkit-scrollbar {
+		display: none;
+	}
+	/* Hide scrollbar for IE, Edge and Firefox */
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+}
+
+@layer base {
+	:root {
+		--foreground-rgb: 0, 0, 0;
+		--background-start-rgb: 214, 219, 220;
+		--background-end-rgb: 255, 255, 255;
+
+		--border-radius: 0.75rem;
+
+		--palette-1: #16133d;
+		--palette-2: #9882ba;
+		--palette-3: #edc6fa;
+		--palette-4: #ffc2e2;
+		--palette-5: #fff5d9;
+
+		--background-opacity: 0.675;
+		/* --background-color-solid: rgb(from var(--palette-1) r g b); */
+		--background-color-solid: #171324;
+		--background-color: rgb(
+			from var(--palette-1) r g b / var(--background-opacity)
+		);
+		/* --background-color-element-opaque: #16133d; */
+		--background-color-element-opaque: #261d4b;
+		--background-color-element: rgb(
+			from var(--background-color-element-opaque) r g b /
+				var(--background-opacity)
+		);
+		--hover-color: #4a3790;
+
+		--rootPaddingInline: 1em;
+		--rootPaddingBlock: 0.3em;
+		--rootChildMargin: 1rem;
+	}
+
+	body {
+		min-height: 100vh;
+		min-width: 100vw;
+
+		background-repeat: no-repeat;
+		background-position: top;
+		background-size: auto 100vh;
+
+		/* Background will try to fill along width if the screen is too wide instead */
+		/* The ratio comes from the viewbox dimensions of the svg file */
+		@media (min-aspect-ratio: 1920/1028) {
+			background-size: 100vw auto;
+		}
+	}
+
+	footer {
+		background-color: #9882ba;
+		padding: 16px;
+		display: flex;
+	}
+
+	footer > * {
+		justify-self: start;
+		flex: 1;
+	}
+
+	nav {
+		padding: 1rem;
+	}
+
+	main {
+		display: flex;
+		flex-direction: column;
+		align-content: center;
+		align-items: center;
+
+		gap: var(--rootChildMargin);
+
+		height: 100%;
+
+		padding: 2rem 1rem;
+
+		& > * {
+			max-width: 60rem;
+
+			padding-inline: var(--rootPaddingInline);
+			padding-block: var(--rootPaddingBlock);
+
+			background-color: var(--background-color-element);
+
+			color: #ffffff;
+		}
+
+		& * {
+			border-radius: var(--border-radius);
+		}
+
+		& > strong,
+		.criticalInfo {
+			background-color: var(--background-color-element-opaque);
+			padding-inline: var(--rootPaddingInline);
+			padding-block: var(--rootPaddingBlock);
+		}
+	}
+
+	@media (max-width: 580px) {
+		main {
+			padding-left: 0.5rem;
+			padding-right: 0.5rem;
+		}
+	}
+
+	hgroup {
+		contain: content;
+
+		max-width: 544px;
+		padding: unset;
+		/* width auto is needed so that it works on release version for some reason */
+		width: auto;
+
+		background: none;
+
+		& > * {
+			margin: 0.5em 0;
+		}
+	}
+
+	h1,
+	h2,
+	h3,
+	hgroup {
+		width: fit-content;
+
+		padding-inline: var(--rootPaddingInline);
+		padding-block: var(--rootPaddingBlock);
+		margin-inline: auto;
+
+		text-align: center;
+		font-weight: bold;
+		color: #ffffff;
+
+		background-color: var(--background-color-element-opaque);
+	}
+
+	h1 {
+		max-width: 544px;
+
+		margin-block: 4rem 3rem;
+
+		font-size: xxx-large;
+	}
+
+	h2 {
+		font-size: xx-large;
+	}
+
+	h3 {
+		font-size: x-large;
+	}
+
+	p {
+		contain: content;
+
+		font-size: large;
+
+		/* text-align: center; */
+	}
+
+	.button {
+		border-radius: 1em;
+		font-size: x-large;
+
+		padding-inline: var(--rootPaddingInline);
+		padding-block: var(--rootPaddingBlock);
+
+		background-color: var(--background-color-element-opaque);
+
+		font-weight: bold;
+		color: #ffffff;
+		transition: 0.15s ease-out;
+		transition-property: background-color, scale, color;
+
+		&:hover {
+			background-color: var(--hover-color);
+			scale: 1.1;
+		}
+
+		&:focus {
+			outline: auto;
+		}
+	}
+
+	.specialButton {
+		background-image: linear-gradient(
+			-60deg,
+			var(--palette-2) 10%,
+			#bb94cd 40%,
+			var(--palette-2) 70%
+		);
+		filter: saturate(1.75);
+
+		&:hover {
+			/* translate: 0 -0.5em; */
+			animation: 2s ease-in-out 0.25s infinite alternate hover;
+		}
+	}
+
+	strong {
+		@apply text-3xl font-bold;
+
+		&[class~="criticalInfo"] {
+			@apply text-4xl;
+		}
+	}
+}
+
+@layer components {
+	.label {
+		padding-inline: var(--rootPaddingInline);
+		padding-block: var(--rootPaddingBlock);
+
+		background-color: var(--background-color-element-opaque);
+	}
+	.card {
+		padding: 0;
+		> h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		hgroup {
+			display: block;
+			width: 100%;
+
+			border-end-start-radius: 0;
+			border-end-end-radius: 0;
+
+			margin: 0;
+		}
+
+		> * {
+			display: block;
+			padding-inline: var(--rootPaddingInline);
+			padding-block: var(--rootPaddingBlock);
+		}
+	}
+}
