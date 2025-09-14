@@ -1,3 +1,14 @@
+/* The @import "tailwindcss" is the same as the following lines
+@layer theme, base, components, utilities;
+
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/preflight.css" layer(base);
+@import "tailwindcss/utilities.css" layer(utilities);
+
+Tailwind preflight adds a lot opinionated styles to elements. 
+So if your unstyled elements look different from vanilla HTML, it might be because of preflight
+Learn more about tailwind preflight here: https://tailwindcss.com/docs/preflight
+*/
 @import "tailwindcss";
 
 @custom-variant dark (&:is(.dark *));
@@ -417,10 +428,10 @@ I understand that there could be some performance drop, but i doubt that it is m
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
+	* {
+		@apply border-border outline-ring/50;
 	}
-  body {
-    @apply bg-background text-foreground;
+	body {
+		@apply bg-background text-foreground;
 	}
 }
