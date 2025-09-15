@@ -184,7 +184,10 @@ export default function Page() {
 	return (
 		<main className="aboutUs">
 			<h1>About Us</h1>
-			<p>
+			<p 
+			/* The component should have more flexbility with class name stylings in the future
+		instead of having the styles be hardcoded */
+			className="self-center">
 				SF Hacks is more than just an event, we are a team of passionate
 				individuals dedicated to hosting this hackathon. Our diverse team spans
 				across logistics, design, tech operations, social engagement, marketing,
