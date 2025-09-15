@@ -146,7 +146,7 @@ I understand that there could be some performance drop, but i doubt that it is m
 		display: flex;
 		flex-direction: column;
 		align-content: center;
-		align-items: center;
+		align-items: stretch;
 
 		gap: var(--rootChildMargin);
 

@@ -25,8 +25,9 @@ export default function PastSponsorsPage() {
     <main>
       <h1>Our Past Sponsors</h1>
       <Link
+			// Should update this 'sponsor us' button to be more like a button component
         href="/past-sponsors/why-sponsor"
-        className="button"
+        className="button self-center"
       >
         Sponsor Us!
       </Link>
