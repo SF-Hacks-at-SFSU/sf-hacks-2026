@@ -2,6 +2,17 @@
 
 @custom-variant dark (&:is(.dark *));
 @plugin 'tailwindcss-animate';
+
+/* Audiowide font is added locally instead of via Google Fonts for convinience. 
+I understand that there could be some performance drop, but i doubt that it is much */
+@font-face {
+	font-family: Audiowide;
+	font-weight: 400;
+	font-style: normal;
+	/* This url might fail when hosted on GitHub Pages due the site being hosted in a subdirectory */
+	src: url("/fonts/Audiowide-Regular.ttf") format("truetype");
+}
+
 /* Please implement themes properly in the future */
 @theme {
 	--background-image-gradient-radial: radial-gradient(var(--tw-gradient-stops));
@@ -34,6 +45,8 @@
 	--breakpoint-z: 1366px;
 	--breakpoint-k: 1280px;
 	--breakpoint-ok: 500px;
+
+	--font-audiowide: "Audiowide", serif;
 }
 
 /*

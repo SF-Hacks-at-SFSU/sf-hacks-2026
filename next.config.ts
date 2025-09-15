@@ -8,6 +8,7 @@ const nextConfig: NextConfig = {
 	output: "export",
 	// The environment variable code comes from https://github.com/nextjs/deploy-github-pages/blob/main/next.config.ts
 	basePath: hasCustomDomain ? "" : gitHubPagesBasePath,
+	assetPrefix: hasCustomDomain ? "" : gitHubPagesBasePath,
 	images: {
 		unoptimized: true,
 		// disableStaticImages: true
