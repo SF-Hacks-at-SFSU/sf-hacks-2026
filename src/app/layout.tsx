@@ -45,7 +45,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
 
 				{/* renamed Huy's bg-webdev-temp to rootBackground */}
 				{children}
-				<MLHBanner></MLHBanner>
+				{/* <MLHBanner></MLHBanner> */}
 				<Analytics></Analytics>
 			</body>
 		</html>

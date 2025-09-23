@@ -4,6 +4,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import logo from "../../../public/img/logo.svg";
+import discord from "../../../public/icons/discord.svg";
+import instagram from "../../../public/icons/instagram.svg";
 
 // Set menu links here
 const NAV_LINKS = [
@@ -145,15 +148,54 @@ interface MobileMenuProps {
 }
 
 function MobileMenu({ isOpen, handleToggle, className = "" }: MobileMenuProps) {
+	console.log(isOpen);
 	return (
 		<div className={`${className}`}>
-			{/* Mobile Menu Button */}
-			<button
-				onClick={handleToggle}
-				className="fixed top-4 right-4 z-50 p-2 text-[#13123e] transition-colors duration-200 rounded-lg backdrop-blur-xs"
-			>
-				{isOpen ? <X size={32} /> : <Menu size={32} />}
-			</button>
+			{/* logo and menu container */}
+			<div className="flex items-center">
+				<button>
+					<Image
+						src={logo as string}
+						alt="sfhacks2026 logo"
+						width={50}
+						height={50}
+					/>
+				</button>
+				{/* Mobile Menu Button */}
+				<button
+					onClick={handleToggle}
+					className="z-50 p-2 text-[#FFBD52] transition-colors duration-200 rounded-lg backdrop-blur-xs"
+				>
+					{/* TODO: Use Menu component from lucide or use burger menu svg from figma design? */}
+					{!isOpen && (
+						<Menu
+							size={40}
+							className=""
+						/>
+					)}
+				</button>
+			</div>
+
+			{/* discord and instagram icons container */}
+			<div className="flex items-center gap-3">
+				<button>
+					{/* TODO add responsive widths and heights to images and icons */}
+					<Image
+						src={discord as string}
+						alt="discord icon"
+						width={40}
+						height={40}
+					/>
+				</button>
+				<button>
+					<Image
+						src={instagram as string}
+						alt="instagram icon"
+						width={40}
+						height={40}
+					/>
+				</button>
+			</div>
 
 			{/* Full Screen Mobile Menu */}
 			<div
@@ -161,6 +203,15 @@ function MobileMenu({ isOpen, handleToggle, className = "" }: MobileMenuProps) {
 					isOpen ? "translate-x-0" : "translate-x-full"
 				}`}
 			>
+				<button>
+					{isOpen && (
+						<X
+							size={32}
+							onClick={handleToggle}
+						/>
+					)}
+				</button>
+
 				<div className="flex flex-col items-center justify-center h-full">
 					{/* Mobile Navigation Links */}
 					<div className="flex flex-col items-center gap-8 text-2xl text-[#13123e]">
@@ -214,7 +265,7 @@ export default function Navbar() {
 			<MobileMenu
 				isOpen={isOpen}
 				handleToggle={handleToggle}
-				className="md:hidden pointer-events-auto "
+				className="md:hidden pointer-events-auto flex justify-between"
 			/>
 		</nav>
 	);
