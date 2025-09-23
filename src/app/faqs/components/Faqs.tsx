@@ -3,7 +3,9 @@ import "../styles.css";
 
 function FAQ() {
 	return (
-		<ul className="faqContainer">
+		/* The component should have more flexbility with class name stylings in the future
+		instead of having the styles be hardcoded */
+		<ul className="faqContainer self-center">
 			{data.map((question, questionIndex) => (
 				<li key={questionIndex}>
 					<details className="faqQuestion">

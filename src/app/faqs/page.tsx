@@ -5,7 +5,7 @@ export default function FAQPage() {
 	return (
 		<main>
 			<h1>Frequently Asked Questions!</h1>
-			<strong>
+			<strong className="self-center">
 				<a href="https://github.com/MLH/mlh-policies/blob/main/code-of-conduct.md">
 					MLH Code of Conduct
 				</a>

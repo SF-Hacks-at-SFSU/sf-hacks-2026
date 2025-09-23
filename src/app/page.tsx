@@ -38,7 +38,7 @@ export default function Home() {
 				<h3>Theme</h3>
 				<strong>Tech For Good</strong>
 			</span> Hiding the theme for now until the theme for 2026 is ready to be published*/}
-			<div className="card">
+			<div className="card self-center" /* Should consider updating this 'date card to be more of a component' */ >
 				<h3>Date</h3>
 				<CountDown />
 			</div>

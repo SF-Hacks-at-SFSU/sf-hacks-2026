@@ -14,7 +14,9 @@ export default function Teams({ teams, members }: TeamsProps) {
 	const [activeTab, updateActiveTab] = useState(0);
 
 	return (
-		<div className="teams">
+		/* The component should have more flexbility with class name stylings in the future
+		instead of having the styles be hardcoded */
+		<div className="teams self-center">
 			<div className="tabs">
 				{teams.map((team, i) => (
 					<TeamTab
