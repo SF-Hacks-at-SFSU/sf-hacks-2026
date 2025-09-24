@@ -11,7 +11,12 @@ import instagram from "../../../public/icons/instagram.svg";
 // Set menu links here
 const NAV_LINKS = [
 	{
-		name: "Past Sponsors",
+		name: "About Us",
+		href: "/about-us",
+		newTab: false,
+	},
+	{
+		name: "Sponsors",
 		href: "/past-sponsors", // We really need a better system for handling routes than just renaming the routes manually
 		newTab: false,
 	},
@@ -26,11 +31,6 @@ const NAV_LINKS = [
 	// 	href: "https://docs.google.com/document/d/1Ecz-rSa1G3D9gjdr-WvC0qk9GFsEri1OL5VFNBakgG8/edit?tab=t.0#heading=h.5mlg45992779",
 	// 	newTab: true,
 	// },
-	{
-		name: "Our Team",
-		href: "/about-us",
-		newTab: false,
-	},
 	{
 		name: "FAQs",
 		href: "/faqs",
@@ -90,52 +90,71 @@ interface NavLinksProps {
 
 function NavLinks({ className = "" }: NavLinksProps) {
 	return (
-		<div className={`items-center justify-center ${className}`}>
+		<div
+			className={`items-center justify-center ${className} w-full font-audiowide`}
+		>
 			<div
-				className={`flex text-[#13123e] items-center justify-center pointer-events-auto w-fill gap-8 px-6 py-4 text-lg font-medium bg-[#fff6d9] bg-navy-900/80 rounded-xl shadow-lg md:gap-12 lg:text-xl`}
+				className={`flex text-[#13123e] items-center justify-between 
+					pointer-events-auto w-fill gap-8 px-6 py-4 text-lg font-medium
+					 md:gap-40 lg:text-xl`}
 			>
-				<Link
-					href="/"
-					className="hidden md:block"
-				>
-					<Image
-						src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/logo-vertical.png`}
-						alt="SF Hacks logo"
-						width={40}
-						height={40}
-						className="transition-transform duration-200 hover:scale-110"
-					/>
-				</Link>
-
-				{/* Navigation Links */}
-				<div className="flex items-center gap-8 md:gap-12">
-					{NAV_LINKS.map((link) => (
-						<NavLink
-							key={link.name}
-							href={link.href}
-							newTab={link.newTab}
-						>
-							{link.name}
-						</NavLink>
-					))}
+				<div className="flex gap-12">
+					<Link
+						href="/"
+						className="hidden md:block"
+					>
+						<Image
+							src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/img/logo.svg`}
+							alt="SF Hacks logo"
+							width={40}
+							height={40}
+							className="transition-transform duration-200 hover:scale-110"
+						/>
+					</Link>
+					{/* Navigation Links */}
+					<div className="flex items-center gap-8 md:gap-12 text-[#FFBD52]">
+						{NAV_LINKS.map((link) => (
+							<NavLink
+								key={link.name}
+								href={link.href}
+								newTab={link.newTab}
+							>
+								{link.name}
+							</NavLink>
+						))}
+					</div>
 				</div>
 
-				<a
-					className="button discord"
-					href="https://discord.gg/P5PsDR6G7W"
-					target="_blank"
-				>
-					Discord{" "}
-				</a>
+				<div className="flex gap-8 md:gap-12 items-center">
+					<a
+						href="https://discord.gg/P5PsDR6G7W"
+						target="_blank"
+						className="bg-[#6FD9FF] rounded-[20px] px-16 py-2 text-[#43457F]"
+					>
+						Discord
+					</a>
+					<a
+						href="https://www.instagram.com/sf.hacks/"
+						target="_blank"
+					>
+						{/* TODO add responsive widths and heights to images and icons */}
+						<Image
+							src={instagram as string}
+							alt="instagram icon"
+							width={40}
+							height={40}
+						/>
+					</a>
+				</div>
 
 				{/* Register Button */}
 				{/* This button is being defined twice right now, one in the desktop navbar and the other in the mobile navbar*/}
-				<a
+				{/* <a
 					href={REGISTER_LINK.href}
 					className="button text-white bg-linear-to-r from-purple-500 to-pink-500 shadow-lg hover:shadow-purple-500/25 active:scale-95"
 				>
 					{REGISTER_LINK.name}
-				</a>
+				</a> */}
 			</div>
 		</div>
 	);
