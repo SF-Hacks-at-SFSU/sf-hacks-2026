@@ -197,7 +197,10 @@ function MobileMenu({ isOpen, handleToggle, className = "" }: MobileMenuProps) {
 
 			{/* discord and instagram icons container */}
 			<div className="flex items-center gap-3">
-				<button>
+				<a
+					href="https://discord.gg/P5PsDR6G7W"
+					target="_blank"
+				>
 					{/* TODO add responsive widths and heights to images and icons */}
 					<Image
 						src={discord as string}
@@ -205,15 +208,18 @@ function MobileMenu({ isOpen, handleToggle, className = "" }: MobileMenuProps) {
 						width={40}
 						height={40}
 					/>
-				</button>
-				<button>
+				</a>
+				<a
+					href="https://www.instagram.com/sf.hacks/"
+					target="_blank"
+				>
 					<Image
 						src={instagram as string}
 						alt="instagram icon"
 						width={40}
 						height={40}
 					/>
-				</button>
+				</a>
 			</div>
 
 			{/* Full Screen Mobile Menu */}
