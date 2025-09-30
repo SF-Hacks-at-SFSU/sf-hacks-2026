@@ -111,9 +111,9 @@ function NavLinks({ className = "" }: NavLinksProps) {
 						<Image
 							src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/img/logo.svg`}
 							alt="SF Hacks logo"
-							width={40}
-							height={40}
-							className="transition-transform duration-200 hover:scale-110"
+							width={50}
+							height={50}
+							className="transition-transform duration-200 hover:scale-110 min-w-12"
 						/>
 					</Link>
 					{/* Navigation Links */}
@@ -142,12 +142,12 @@ function NavLinks({ className = "" }: NavLinksProps) {
 						href="https://www.instagram.com/sf.hacks/"
 						target="_blank"
 					>
-						{/* TODO add responsive widths and heights to images and icons */}
 						<Image
 							src={instagram as string}
 							alt="instagram icon"
-							width={40}
-							height={40}
+							width={50}
+							height={50}
+							className=" min-w-12"
 						/>
 					</a>
 				</div>
@@ -172,11 +172,10 @@ interface MobileMenuProps {
 }
 
 function MobileMenu({ isOpen, handleToggle, className = "" }: MobileMenuProps) {
-	console.log(isOpen);
 	return (
 		<div className={`${className}`}>
 			{/* logo and menu container */}
-			<div className="flex items-center">
+			<div className="flex items-center gap-.5">
 				<button>
 					<Image
 						src={logo as string}
@@ -190,7 +189,6 @@ function MobileMenu({ isOpen, handleToggle, className = "" }: MobileMenuProps) {
 					onClick={handleToggle}
 					className="z-50 p-2 text-[#FFBD52] transition-colors duration-200 rounded-lg backdrop-blur-xs"
 				>
-					{/* TODO: Use Menu component from lucide or use burger menu svg from figma design? */}
 					{!isOpen && (
 						<Menu
 							size={40}
@@ -201,12 +199,11 @@ function MobileMenu({ isOpen, handleToggle, className = "" }: MobileMenuProps) {
 			</div>
 
 			{/* discord and instagram icons container */}
-			<div className="flex items-center gap-3">
+			<div className="flex items-center gap-4">
 				<a
 					href="https://discord.gg/P5PsDR6G7W"
 					target="_blank"
 				>
-					{/* TODO add responsive widths and heights to images and icons */}
 					<Image
 						src={discord as string}
 						alt="discord icon"
