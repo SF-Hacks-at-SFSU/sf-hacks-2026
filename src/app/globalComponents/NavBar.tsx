@@ -16,6 +16,11 @@ const NAV_LINKS = [
 		newTab: false,
 	},
 	{
+		name: "Sponsor Us",
+		href: "/sponsor-us",
+		newTab: false,
+	},
+	{
 		name: "Sponsors",
 		href: "/past-sponsors", // We really need a better system for handling routes than just renaming the routes manually
 		newTab: false,
@@ -224,7 +229,7 @@ function MobileMenu({ isOpen, handleToggle, className = "" }: MobileMenuProps) {
 
 			{/* Full Screen Mobile Menu */}
 			<div
-				className={`fixed inset-0 z-40 bg-white transform transition-transform duration-300 ease-in-out ${
+				className={`fixed inset-0 z-40 bg-[#FFBD52] transform transition-transform duration-300 ease-in-out ${
 					isOpen ? "translate-x-0" : "translate-x-full"
 				}`}
 			>
@@ -264,7 +269,7 @@ function MobileMenu({ isOpen, handleToggle, className = "" }: MobileMenuProps) {
 						{/* This button is being defined twice right now, one in the desktop navbar and the other in the mobile navbar*/}
 						<NavLink
 							href={REGISTER_LINK.href}
-							className="px-8 py-3 mt-4 text-white transition-all duration-200 bg-linear-to-r from-purple-500 to-pink-500 rounded-full shadow-lg hover:shadow-purple-500/25 hover:scale-105 active:scale-95"
+							className="px-8 py-3 mt-4 bg-[#6FD9FF] text-[#43457F] rounded-full shadow-lg active:scale-95"
 							onClick={handleToggle}
 							newTab={true}
 						>
