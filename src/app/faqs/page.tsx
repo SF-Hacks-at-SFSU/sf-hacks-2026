@@ -4,7 +4,7 @@ import FAQ from "./components/Faqs";
 export default function FAQPage() {
 	return (
 		<main>
-			<h1>Frequently Asked Questions!</h1>
+			<h1 className="place-self-center">Frequently Asked Questions!</h1>
 			<strong className="self-center">
 				<a href="https://github.com/MLH/mlh-policies/blob/main/code-of-conduct.md">
 					MLH Code of Conduct
