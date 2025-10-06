@@ -23,11 +23,11 @@ function FAQ() {
 						key={questionIndex}
 						value={questionIndex.toString()}
 					>
-						{/* The padding is split into the Trigger and Content component so that their background colors can fill the whole accordion */}
-						<AccordionTrigger className="max-w-full p-(--padding-default)">
+						{/* The padding and corner radius are split into the Trigger and Content component so that their background colors can fill the whole accordion */}
+						<AccordionTrigger className="max-w-full rounded-none p-(--padding-default) bg-(--background-color-element-opaque)">
 							{question.question}
 						</AccordionTrigger>
-						<AccordionContent className="p-(--padding-default)">
+						<AccordionContent className="rounded-none p-(--padding-default)">
 							{question.answer}
 						</AccordionContent>
 					</AccordionItem>

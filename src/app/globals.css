@@ -100,11 +100,8 @@ I understand that there could be some performance drop, but i doubt that it is m
 			from var(--palette-1) r g b / var(--background-opacity)
 		);
 		/* --background-color-element-opaque: #16133d; */
-		--background-color-element-opaque: #261d4b;
-		--background-color-element: rgb(
-			from var(--background-color-element-opaque) r g b /
-				var(--background-opacity)
-		);
+		--background-color-element-opaque: #43457F;
+		--background-color-element: #303160;
 		--hover-color: #4a3790;
 
 		--rootPaddingInline: 1em;
