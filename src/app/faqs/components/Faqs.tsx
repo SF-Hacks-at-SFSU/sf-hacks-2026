@@ -19,7 +19,7 @@ function FAQ() {
 			>
 				{data.map((question, questionIndex) => (
 					<AccordionItem
-						className="rounded-none"
+						className="border-1 rounded-none"
 						key={questionIndex}
 						value={questionIndex.toString()}
 					>
