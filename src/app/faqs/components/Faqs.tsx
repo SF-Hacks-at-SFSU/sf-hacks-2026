@@ -15,11 +15,13 @@ function FAQ() {
 		<>
 			<Accordion
 				type="multiple"
-				className="basis-full p-0 rounded-none max-h-[65dvh] overflow-auto"
+				// The transparent background property is jsut to override the global style for now. 
+				// It should be removed once global.css is properly cleaned up
+				className="basis-full p-0 rounded-none max-h-[65dvh] overflow-auto bg-[#0000]"
 			>
 				{data.map((question, questionIndex) => (
 					<AccordionItem
-						className="border-1 rounded-none"
+						className="border-1 rounded-none max-w-(--paragraph-width-default)"
 						key={questionIndex}
 						value={questionIndex.toString()}
 					>
@@ -27,7 +29,7 @@ function FAQ() {
 						<AccordionTrigger className="max-w-full rounded-none p-(--padding-default) bg-(--background-color-element-opaque)">
 							{question.question}
 						</AccordionTrigger>
-						<AccordionContent className="rounded-none p-(--padding-default)">
+						<AccordionContent className="rounded-none p-(--padding-default) bg-(--background-color-element)">
 							{question.answer}
 						</AccordionContent>
 					</AccordionItem>
