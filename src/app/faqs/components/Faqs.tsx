@@ -1,21 +1,35 @@
 import React from "react";
-import "../styles.css";
+// import "../styles.css";
 import { qnas as data } from "@/data/faqs";
+import {
+	Accordion,
+	AccordionContent,
+	AccordionItem,
+	AccordionTrigger,
+} from "@/components/ui/accordion";
 
+// TODO: Add class name support for the component
 function FAQ() {
 	return (
-		/* The component should have more flexbility with class name stylings in the future
-		instead of having the styles be hardcoded */
-		<ul className="faqContainer self-center">
-			{data.map((question, questionIndex) => (
-				<li key={questionIndex}>
-					<details className="faqQuestion">
-						<summary>{question.question}</summary>
-						<div>{question.answer}</div>
-					</details>
-				</li>
-			))}
-		</ul>
+		<>
+			<Accordion
+				type="multiple"
+				className="basis-full p-0 rounded-none max-h-[70dvh] overflow-auto"
+			>
+				{data.map((question, questionIndex) => (
+					<AccordionItem
+						className="rounded-none"
+						key={questionIndex}
+						value={questionIndex.toString()}
+					>
+						<AccordionTrigger className="max-w-full">
+							{question.question}
+						</AccordionTrigger>
+						<AccordionContent>{question.answer}</AccordionContent>
+					</AccordionItem>
+				))}
+			</Accordion>
+		</>
 	);
 }
 
