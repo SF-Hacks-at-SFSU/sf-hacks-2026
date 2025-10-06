@@ -15,7 +15,7 @@ function FAQ() {
 		<>
 			<Accordion
 				type="multiple"
-				className="basis-full p-0 rounded-none max-h-[70dvh] overflow-auto"
+				className="basis-full p-0 rounded-none max-h-[65dvh] overflow-auto"
 			>
 				{data.map((question, questionIndex) => (
 					<AccordionItem
