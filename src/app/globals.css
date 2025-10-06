@@ -32,7 +32,7 @@ I understand that there could be some performance drop, but i doubt that it is m
 		var(--tw-gradient-stops)
 	);
 	/* Colors for icons like accordion chevron */
-	--color-icon: #FF76FE;
+	--color-icon: #ff76fe;
 
 	--color-sfyellow: #fff5d9;
 	--color-login-button: #d9d9d9;
@@ -102,13 +102,18 @@ I understand that there could be some performance drop, but i doubt that it is m
 			from var(--palette-1) r g b / var(--background-opacity)
 		);
 		/* --background-color-element-opaque: #16133d; */
-		--background-color-element-opaque: #43457F;
+		--background-color-element-opaque: #43457f;
 		--background-color-element: #303160;
 		--hover-color: #4a3790;
 
 		--rootPaddingInline: 1em;
 		--rootPaddingBlock: 0.3em;
 		--rootChildMargin: 1rem;
+
+		/* Some recommended widths for paragraphs and elements that contain paragraphs */
+		/* These numebrs were based off of vibes */
+		--paragraph-width-default: 35rem;
+		--paragraph-width-large: 48rem;
 
 		--padding-default: 14px;
 	}
