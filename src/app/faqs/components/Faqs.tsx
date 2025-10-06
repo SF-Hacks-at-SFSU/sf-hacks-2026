@@ -11,6 +11,7 @@ import {
 // TODO: Add class name support for the component
 function FAQ() {
 	return (
+		// TODO: try to simplify the tailwind after fixing global.css
 		<>
 			<Accordion
 				type="multiple"
@@ -22,10 +23,13 @@ function FAQ() {
 						key={questionIndex}
 						value={questionIndex.toString()}
 					>
-						<AccordionTrigger className="max-w-full">
+						{/* The padding is split into the Trigger and Content component so that their background colors can fill the whole accordion */}
+						<AccordionTrigger className="max-w-full p-(--padding-default)">
 							{question.question}
 						</AccordionTrigger>
-						<AccordionContent>{question.answer}</AccordionContent>
+						<AccordionContent className="p-(--padding-default)">
+							{question.answer}
+						</AccordionContent>
 					</AccordionItem>
 				))}
 			</Accordion>

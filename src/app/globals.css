@@ -110,6 +110,8 @@ I understand that there could be some performance drop, but i doubt that it is m
 		--rootPaddingInline: 1em;
 		--rootPaddingBlock: 0.3em;
 		--rootChildMargin: 1rem;
+
+		--padding-default: 14px;
 	}
 
 	body {
@@ -199,9 +201,9 @@ I understand that there could be some performance drop, but i doubt that it is m
 		}
 	}
 
-	h1,
+	/* h1,
 	h2,
-	h3,
+	h3, */
 	hgroup {
 		width: fit-content;
 
