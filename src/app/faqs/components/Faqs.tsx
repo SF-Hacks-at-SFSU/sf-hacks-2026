@@ -17,6 +17,7 @@ const qnaColumnGroups = [qnaColumnFirst, qnaColumnSecond];
 function FAQ() {
 	return (
 		// TODO: try to simplify the tailwind after fixing global.css
+		// TODO: Issue #9: Text sizes are different depending on whether the answer uses a Text node versus a paragraph node
 		// The transparent background property is just to override the global style for now.
 		// It should be removed once global.css is properly cleaned up
 		<div className="flex flex-row flex-wrap gap-x-(--rootChildMargin) p-0 rounded-none max-h-[65dvh] max-w-[2*calc(var(--paragraph-width-default))] overflow-auto bg-[#0000]">
