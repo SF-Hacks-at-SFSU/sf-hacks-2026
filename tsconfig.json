@@ -3,6 +3,7 @@
 		"lib": ["dom", "dom.iterable", "esnext"],
 		"paths": {
 			"@/*": ["./src/*"],
+			"@@/*": ["./public/*"],
 			"@nextConfig": ["./next.config.ts"]
 		},
 		"forceConsistentCasingInFileNames": true,

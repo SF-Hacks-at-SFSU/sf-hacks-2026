@@ -4,9 +4,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
-import logo from "../../../public/img/logo.svg";
-import discord from "../../../public/icons/discord.svg";
-import instagram from "../../../public/icons/instagram.svg";
+import logo from "@@/img/logo.svg";
+import discord from "@@/icons/discord.svg";
+import instagram from "@@/icons/instagram.svg";
 
 // Set menu links here
 const NAV_LINKS = [
