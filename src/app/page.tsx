@@ -1,46 +1,69 @@
 import Image from "next/image";
-import CountDown from "./components/Countdown";
 import "./styles.css";
 
 export default function Home() {
 	return (
-		<main id="home">
-			<h2 className="logo">
+		<main
+			id="home"
+			className="relative min-h-screen overflow-hidden bg-[#030528]"
+		>
+			{/* BACKGROUND */}
+			<div className="absolute inset-0 z-0">
 				<Image
-					src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/logo-horizontal.png`}
-					alt="SF Hacks Logo"
-					width={272 * 2}
-					height={92 * 2}
-					style={{
-						backgroundColor: "#fff5d980",
-						backdropFilter: "blur(4px)",
-						borderRadius: "16px",
-					}}
+					src="/SunGridDesktop.svg"
+					alt=""
+					fill
+					priority
+					className="
+            pointer-events-none select-none
+            /* slightly zoomed out so both sides show */
+            object-contain md:object-cover
+            /* push horizon up slightly */
+            object-[50%_78%] md:object-center
+            scale-[1.05] sm:scale-[1.1] md:scale-100
+            transition-transform duration-500
+          "
 				/>
-			</h2>
-			{/* <p className="bg-transparent text-black text-2xl font-bold ">
-				Cohosted by:{" "}
-			</p>
-			<a
-				href="https://www.openmind.org"
-				target="_blank"
-				className="bg-transparent pb-5	"
-			>
-				<Image
-					src="/sponsor-logos/current/OpenMind(black).svg"
-					className="bg-transparent"
-					alt="Openmind logo"
-					width={400}
-					height={300}
-				/>
-			</a> Hiding title sponsor for now*/}
-			{/* <span className="card">
-				<h3>Theme</h3>
-				<strong>Tech For Good</strong>
-			</span> Hiding the theme for now until the theme for 2026 is ready to be published*/}
-			<div className="card self-center" /* Should consider updating this 'date card to be more of a component' */ >
-				<h3>Date</h3>
-				<CountDown />
+			</div>
+
+			{/* MOBILE content */}
+			<div className="relative z-10 block md:hidden w-full px-6 pt-4 pb-2 flex justify-center">
+				<div className="flex flex-col rounded-xl w-[90%] max-w-[680px] h-auto bg-transparent justify-center gap-2">
+					<p className="font-anaheim text-[#FFBD52] text-center text-base sm:text-lg leading-tight">
+						February 4–6: Student Life Events Center / Annex
+					</p>
+					<p className="text-[#FFBD52] font-audiowide text-center text-3xl sm:text-4xl leading-tight">
+						SF Hacks 2026
+					</p>
+					<div className="flex gap-3 justify-center flex-wrap mt-1">
+						<button className="border bg-[#6FD9FF] text-black rounded-full px-5 py-2 font-anaheim font-semibold text-sm sm:text-base">
+							Join the Waitlist
+						</button>
+						<p className="text-[#FFBD52] px-4 py-2 font-anaheim font-semibold text-sm sm:text-base whitespace-nowrap">
+							More updates soon
+						</p>
+					</div>
+				</div>
+			</div>
+
+			{/* DESKTOP overlay */}
+			<div className="hidden md:flex absolute inset-0 z-10 items-end justify-start">
+				<div className="flex flex-col rounded-xl w-[42vw] max-w-[680px] h-40 bg-transparent ml-[6vw] mb-[12vh] justify-center gap-2">
+					<p className="font-anaheim text-[#FFBD52] text-center text-lg">
+						February 4–6: Student Life Events Center / Annex
+					</p>
+					<p className="text-[#FFBD52] font-audiowide text-center text-4xl">
+						SF Hacks 2026
+					</p>
+					<div className="flex gap-3 justify-center">
+						<button className="border bg-[#6FD9FF] text-black rounded-full px-4 py-2 font-anaheim font-semibold">
+							Join the Waitlist
+						</button>
+						<p className="text-[#FFBD52] px-4 py-2 font-anaheim font-semibold whitespace-nowrap">
+							More updates soon
+						</p>
+					</div>
+				</div>
 			</div>
 		</main>
 	);
