@@ -5,7 +5,7 @@ export default function Home() {
 	return (
 		<main
 			id="home"
-			className="relative min-h-screen overflow-hidden bg-[#030528]"
+			className="relative min-h-screen h-auto overflow-clip bg-[#030528]"
 		>
 			{/* BACKGROUND */}
 			<div className="absolute inset-0 z-0">
@@ -17,10 +17,10 @@ export default function Home() {
 					className="
             pointer-events-none select-none
             /* slightly zoomed out so both sides show */
-            object-contain md:object-cover
+             md:object-cover
             /* push horizon up slightly */
-            object-[50%_78%] md:object-center
-            scale-[1.05] sm:scale-[1.1] md:scale-100
+            md:object-center
+            scale-[190%] md:scale-100
             transition-transform duration-500
           "
 				/>
