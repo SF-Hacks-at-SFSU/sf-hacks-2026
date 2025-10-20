@@ -34,17 +34,6 @@ I understand that there could be some performance drop, but i doubt that it is m
 	/* Colors for icons like accordion chevron */
 	--color-icon: #ff76fe;
 
-	--color-sfyellow: #fff5d9;
-	--color-login-button: #d9d9d9;
-	--color-sf-grey-blue: #838fba;
-	--color-sf-dark-blue: #132a3e;
-	--color-sf-darker-blue: #132330;
-	--color-sf-pink: #ffc2e2;
-	--color-sf-light-blue: #2b455c;
-	--color-sf-tan: #fff5d9;
-	--color-sf-bloo: #16133d;
-	--color-sf-dark-purp: #9882ba;
-	--color-sf-purp: #edc6fa;
 	--color-background: hsl(var(--background));
 	--color-foreground: hsl(var(--foreground));
 
@@ -88,12 +77,6 @@ I understand that there could be some performance drop, but i doubt that it is m
 		--background-end-rgb: 255, 255, 255;
 
 		--border-radius: 0.75rem;
-
-		--palette-1: #16133d;
-		--palette-2: #9882ba;
-		--palette-3: #edc6fa;
-		--palette-4: #ffc2e2;
-		--palette-5: #fff5d9;
 
 		--background-opacity: 0.675;
 		/* --background-color-solid: rgb(from var(--palette-1) r g b); */
