@@ -81,6 +81,18 @@ I understand that there could be some performance drop, but i doubt that it is m
 :root {
 	--border-radius: 0.625rem;
 
+	--rootPaddingInline: 1em;
+	--rootPaddingBlock: 0.3em;
+	--rootChildMargin: 1rem;
+
+	/* Some recommended widths for paragraphs and elements that contain paragraphs */
+	/* These numebrs were based off of vibes */
+	--paragraph-width-default: 35rem;
+	--paragraph-width-large: 48rem;
+
+	--padding-default: 14px;
+	
+
 	--background: oklch(1 0 0);
 	--foreground: oklch(0.141 0.005 285.823);
 
@@ -100,6 +112,23 @@ I understand that there could be some performance drop, but i doubt that it is m
 
 	--muted: oklch(0.967 0.001 286.375);
 	--muted-foreground: oklch(0.552 0.016 285.938);
+
+	--foreground-rgb: 0, 0, 0;
+	--background-start-rgb: 214, 219, 220;
+	--background-end-rgb: 255, 255, 255;
+
+	--border-radius: 0.75rem;
+
+	--background-opacity: 0.675;
+	/* --background-color-solid: rgb(from var(--palette-1) r g b); */
+	--background-color-solid: #171324;
+	--background-color: rgb(
+		from var(--palette-1) r g b / var(--background-opacity)
+	);
+	/* --background-color-element-opaque: #16133d; */
+	--background-color-element-opaque: #43457f;
+	--background-color-element: #303160;
+	--hover-color: #4a3790;
 }
 /*
   The default border color has changed to `currentColor` in Tailwind CSS v4,
@@ -153,36 +182,6 @@ I understand that there could be some performance drop, but i doubt that it is m
 }
 
 @layer base {
-	:root {
-		--foreground-rgb: 0, 0, 0;
-		--background-start-rgb: 214, 219, 220;
-		--background-end-rgb: 255, 255, 255;
-
-		--border-radius: 0.75rem;
-
-		--background-opacity: 0.675;
-		/* --background-color-solid: rgb(from var(--palette-1) r g b); */
-		--background-color-solid: #171324;
-		--background-color: rgb(
-			from var(--palette-1) r g b / var(--background-opacity)
-		);
-		/* --background-color-element-opaque: #16133d; */
-		--background-color-element-opaque: #43457f;
-		--background-color-element: #303160;
-		--hover-color: #4a3790;
-
-		--rootPaddingInline: 1em;
-		--rootPaddingBlock: 0.3em;
-		--rootChildMargin: 1rem;
-
-		/* Some recommended widths for paragraphs and elements that contain paragraphs */
-		/* These numebrs were based off of vibes */
-		--paragraph-width-default: 35rem;
-		--paragraph-width-large: 48rem;
-
-		--padding-default: 14px;
-	}
-
 	body {
 		min-height: 100vh;
 		min-width: 100vw;
