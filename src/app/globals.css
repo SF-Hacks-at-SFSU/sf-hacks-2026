@@ -134,6 +134,11 @@ To learn more, @see https://tailwindcss.com/docs/theme#referencing-other-variabl
 	scrollbar-width: none; /* Firefox */
 }
 
+@utility bg-primary-gradient {
+	/* Still working on proper theme color names so the secondary hex color isn't a custom property yet*/
+	background-image: linear-gradient(to bottom, var(--background-color-element-opaque) 50%, #303160 100%);
+}
+
 @layer components {
 	.label {
 		padding-inline: var(--padding-inline-default);
