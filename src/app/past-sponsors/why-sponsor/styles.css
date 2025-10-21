@@ -3,7 +3,7 @@
 	background-color: unset;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	gap: var(--rootChildMargin);
+	gap: var(--margin-default);
 
 	& > * {
 		padding: var(--rootPadding);

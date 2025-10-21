@@ -67,9 +67,9 @@ To learn more, @see https://tailwindcss.com/docs/theme#referencing-other-variabl
 :root {
 	--border-radius: 0.625rem;
 
-	--rootPaddingInline: 1em;
-	--rootPaddingBlock: 0.3em;
-	--rootChildMargin: 1rem;
+	--padding-inline-default: 1em;
+	--padding-block-default: 0.3em;
+	--margin-default: 1rem;
 
 	/* Some recommended widths for paragraphs and elements that contain paragraphs */
 	/* These numebrs were based off of vibes */
@@ -136,8 +136,8 @@ To learn more, @see https://tailwindcss.com/docs/theme#referencing-other-variabl
 
 @layer components {
 	.label {
-		padding-inline: var(--rootPaddingInline);
-		padding-block: var(--rootPaddingBlock);
+		padding-inline: var(--padding-inline-default);
+		padding-block: var(--padding-block-default);
 
 		background-color: var(--background-color-element-opaque);
 	}
@@ -160,8 +160,8 @@ To learn more, @see https://tailwindcss.com/docs/theme#referencing-other-variabl
 
 		> * {
 			display: block;
-			padding-inline: var(--rootPaddingInline);
-			padding-block: var(--rootPaddingBlock);
+			padding-inline: var(--padding-inline-default);
+			padding-block: var(--padding-block-default);
 		}
 	}
 }
@@ -188,7 +188,7 @@ To learn more, @see https://tailwindcss.com/docs/theme#referencing-other-variabl
 		align-content: center;
 		align-items: stretch;
 
-		gap: var(--rootChildMargin);
+		gap: var(--margin-default);
 
 		height: 100%;
 
@@ -197,8 +197,8 @@ To learn more, @see https://tailwindcss.com/docs/theme#referencing-other-variabl
 		& > * {
 			max-width: 60rem;
 
-			padding-inline: var(--rootPaddingInline);
-			padding-block: var(--rootPaddingBlock);
+			padding-inline: var(--padding-inline-default);
+			padding-block: var(--padding-block-default);
 
 			background-color: var(--background-color-element);
 
