@@ -24,38 +24,24 @@ I understand that there could be some performance drop, but i doubt that it is m
 	src: url("/fonts/Audiowide-Regular.ttf") format("truetype");
 }
 
-/* Please implement themes properly in the future */
-@theme {
-	--background-image-gradient-radial: radial-gradient(var(--tw-gradient-stops));
-	--background-image-gradient-conic: conic-gradient(
-		from 180deg at 50% 50%,
-		var(--tw-gradient-stops)
-	);
-	/* Colors for icons like accordion chevron */
-	--color-icon: #ff76fe;
+/* If you for some reason don't want to inline custom properties, 
+you can put your styles in this theme style instead of theme inline
+try to keep the non-inline theme style close to the inline theme styles
+To learn more, @see https://tailwindcss.com/docs/theme#referencing-other-variables */
+/* @theme {} */
 
-	--color-background: hsl(var(--background));
-	--color-foreground: hsl(var(--foreground));
-
-	--radius-4xl: 2rem;
-	--radius-lg: var(--border-radius);
-	--radius-md: calc(var(--border-radius) - 2px);
-	--radius-sm: calc(var(--border-radius) - 4px);
-
-	--breakpoint-xl: 1920px;
-	--breakpoint-bruh: 600px;
-	--breakpoint-z: 1366px;
-	--breakpoint-k: 1280px;
-	--breakpoint-ok: 500px;
-
-	--font-audiowide: "Audiowide", serif;
-}
-
+/* I recommend declaring style variables in inline theme whenever possible -V */
+/* @see https://tailwindcss.com/docs/theme#referencing-other-variables */
 @theme inline {
+	--font-audiowide: "Audiowide", serif;
+
 	--radius-sm: calc(var(--border-radius) - 4px);
 	--radius-md: calc(var(--border-radius) - 2px);
 	--radius-lg: var(--border-radius);
 	--radius-xl: calc(var(--border-radius) + 4px);
+
+	/* Colors for icons like accordion chevron */
+	--color-icon: #ff76fe;
 
 	--color-background: var(--background);
 	--color-foreground: var(--foreground);
@@ -91,7 +77,6 @@ I understand that there could be some performance drop, but i doubt that it is m
 	--paragraph-width-large: 48rem;
 
 	--padding-default: 14px;
-	
 
 	--background: oklch(1 0 0);
 	--foreground: oklch(0.141 0.005 285.823);
