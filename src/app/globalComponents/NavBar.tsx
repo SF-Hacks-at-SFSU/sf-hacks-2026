@@ -4,9 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
-import logo from "@@/img/logo.svg";
-import discord from "@@/icons/discord.svg";
-import instagram from "@@/icons/instagram.svg";
 
 // Set menu links here
 const NAV_LINKS = [
@@ -95,15 +92,17 @@ interface NavLinksProps {
 
 function NavLinks({ className = "" }: NavLinksProps) {
 	return (
-		<div
-			className={`items-center justify-center ${className} w-full font-audiowide`}
-		>
+		<div className={`${className} items-center font-audiowide`}>
+			{/* container for 2 divs: one for the  logo/nav links and the other for discord/IG icons */}
 			<div
+				// use flex-1 to make the div take up the full width available
+				// justify between to space out the 2 divs
 				className={`flex text-[#13123e] items-center justify-between 
-					pointer-events-auto w-fill gap-8 px-6 py-4 text-lg font-medium
-					 md:gap-40 lg:text-xl`}
+					pointer-events-auto gap-1 md:gap-3 lg:gap-0 text-lg font-medium
+					  lg:text-xl flex-1`}
 			>
-				<div className="flex gap-12">
+				{/* container for logo and nav links */}
+				<div className="flex gap-2 md:gap-4">
 					<Link
 						href="/"
 						className="hidden md:block"
@@ -111,13 +110,15 @@ function NavLinks({ className = "" }: NavLinksProps) {
 						<Image
 							src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/img/logo.svg`}
 							alt="SF Hacks logo"
-							width={50}
-							height={50}
-							className="transition-transform duration-200 hover:scale-110 min-w-12"
+							className="transition-transform duration-200 hover:scale-110 w-20"
+							width={10}
+							height={10}
+							objectFit="cover"
 						/>
 					</Link>
 					{/* Navigation Links */}
-					<div className="flex items-center gap-8 md:gap-12 text-[#FFBD52]">
+					{/* whitespace-nowrap makes text not wrap to 2 lines */}
+					<div className="flex items-center gap-1 md:gap-4 text-[#FFBD52] whitespace-nowrap">
 						{NAV_LINKS.map((link) => (
 							<NavLink
 								key={link.name}
@@ -130,7 +131,7 @@ function NavLinks({ className = "" }: NavLinksProps) {
 					</div>
 				</div>
 
-				<div className="flex gap-8 md:gap-12 items-center">
+				<div className="flex gap-1 md:gap-4 items-center">
 					<a
 						href="https://discord.gg/P5PsDR6G7W"
 						target="_blank"
@@ -143,11 +144,12 @@ function NavLinks({ className = "" }: NavLinksProps) {
 						target="_blank"
 					>
 						<Image
-							src={instagram as string}
+							src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/icons/instagram.svg`}
 							alt="instagram icon"
-							width={50}
-							height={50}
-							className=" min-w-12"
+							width={10}
+							height={10}
+							className="w-14"
+							objectFit="cover"
 						/>
 					</a>
 				</div>
@@ -178,7 +180,7 @@ function MobileMenu({ isOpen, handleToggle, className = "" }: MobileMenuProps) {
 			<div className="flex items-center gap-.5">
 				<button>
 					<Image
-						src={logo as string}
+						src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/img/logo.svg`}
 						alt="sfhacks2026 logo"
 						width={50}
 						height={50}
@@ -205,7 +207,7 @@ function MobileMenu({ isOpen, handleToggle, className = "" }: MobileMenuProps) {
 					target="_blank"
 				>
 					<Image
-						src={discord as string}
+						src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/icons/discord.svg`}
 						alt="discord icon"
 						width={40}
 						height={40}
@@ -216,7 +218,7 @@ function MobileMenu({ isOpen, handleToggle, className = "" }: MobileMenuProps) {
 					target="_blank"
 				>
 					<Image
-						src={instagram as string}
+						src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/icons/instagram.svg`}
 						alt="instagram icon"
 						width={40}
 						height={40}
@@ -287,8 +289,8 @@ export default function Navbar() {
 	};
 
 	return (
-		<nav className="sticky top-0 z-40 pointer-events-none ">
-			<NavLinks className="hidden md:flex" />
+		<nav className="sticky top-0 z-40 pointer-events-none  w-full">
+			<NavLinks className="hidden md:flex w-full" />
 			<MobileMenu
 				isOpen={isOpen}
 				handleToggle={handleToggle}
