@@ -96,8 +96,8 @@ function NavLinks({ className = "" }: NavLinksProps) {
 			{/* container for 2 divs: one for the  logo/nav links and the other for discord/IG icons */}
 			<div
 				// use flex-1 to make the div take up the full width available
-				// justify between to space out the 2 divs
-				className={`flex text-[#13123e] items-center justify-between 
+				// justify-evenly to space out the 2 divs
+				className={`flex text-[#13123e] items-center justify-evenly 
 					pointer-events-auto gap-1 md:gap-3 lg:gap-0 text-lg font-medium
 					  lg:text-xl flex-1`}
 			>
