@@ -86,11 +86,11 @@ function NavLink({
 	);
 }
 
-interface NavLinksProps {
+interface DesktopLinksProps {
 	className?: string;
 }
 
-function NavLinks({ className = "" }: NavLinksProps) {
+function DesktopLinks({ className = "" }: DesktopLinksProps) {
 	return (
 		<div className={`${className} items-center font-audiowide`}>
 			{/* container for 2 divs: one for the  logo/nav links and the other for discord/IG icons */}
@@ -290,7 +290,7 @@ export default function Navbar() {
 
 	return (
 		<nav className="sticky top-0 z-40 pointer-events-none  w-full">
-			<NavLinks className="hidden md:flex w-full" />
+			<DesktopLinks className="hidden md:flex w-full" />
 			<MobileMenu
 				isOpen={isOpen}
 				handleToggle={handleToggle}
