@@ -232,14 +232,14 @@ function MobileMenu({ isOpen, handleToggle, className = "" }: MobileMenuProps) {
 					isOpen ? "translate-x-0" : "translate-x-full"
 				}`}
 			>
-				<button>
-					{isOpen && (
-						<X
-							size={32}
-							onClick={handleToggle}
-						/>
-					)}
-				</button>
+				{isOpen && (
+					<button
+						onClick={handleToggle}
+						className="p-3"
+					>
+						<X size={32} />
+					</button>
+				)}
 
 				<div className="flex flex-col items-center justify-center h-full">
 					{/* Mobile Navigation Links */}
