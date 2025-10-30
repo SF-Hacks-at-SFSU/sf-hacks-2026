@@ -177,13 +177,15 @@ function MobileMenu({ isOpen, handleToggle, className = "" }: MobileMenuProps) {
 	return (
 		<div className={`${className}`}>
 			{/* logo and menu container */}
-			<div className="flex items-center gap-.5">
+			<div className="flex items-center gap-2">
 				<button>
 					<Image
 						src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/img/logo.svg`}
 						alt="sfhacks2026 logo"
-						width={50}
-						height={50}
+						width={10}
+						height={10}
+						className="w-20"
+						objectFit="cover"
 					/>
 				</button>
 				{/* Mobile Menu Button */}
@@ -193,7 +195,7 @@ function MobileMenu({ isOpen, handleToggle, className = "" }: MobileMenuProps) {
 				>
 					{!isOpen && (
 						<Menu
-							size={40}
+							size={60}
 							className=""
 						/>
 					)}
@@ -201,7 +203,7 @@ function MobileMenu({ isOpen, handleToggle, className = "" }: MobileMenuProps) {
 			</div>
 
 			{/* discord and instagram icons container */}
-			<div className="flex items-center gap-4">
+			<div className="flex items-center gap-6">
 				<a
 					href="https://discord.gg/P5PsDR6G7W"
 					target="_blank"
@@ -209,8 +211,8 @@ function MobileMenu({ isOpen, handleToggle, className = "" }: MobileMenuProps) {
 					<Image
 						src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/icons/discord.svg`}
 						alt="discord icon"
-						width={40}
-						height={40}
+						width={50}
+						height={50}
 					/>
 				</a>
 				<a
@@ -220,8 +222,8 @@ function MobileMenu({ isOpen, handleToggle, className = "" }: MobileMenuProps) {
 					<Image
 						src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/icons/instagram.svg`}
 						alt="instagram icon"
-						width={40}
-						height={40}
+						width={50}
+						height={50}
 					/>
 				</a>
 			</div>
