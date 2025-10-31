@@ -11,11 +11,6 @@ Learn more about tailwind preflight here: https://tailwindcss.com/docs/preflight
 */
 @import "tailwindcss";
 
-@custom-variant dark (&:is(.dark *));
-@plugin 'tailwindcss-animate';
-
-/* Audiowide font is added locally instead of via Google Fonts for convinience. 
-I understand that there could be some performance drop, but i doubt that it is much */
 @font-face {
 	font-family: Audiowide;
 	font-weight: 400;
@@ -24,42 +19,99 @@ I understand that there could be some performance drop, but i doubt that it is m
 	src: url("/fonts/Audiowide-Regular.ttf") format("truetype");
 }
 
-/* Please implement themes properly in the future */
-@theme {
-	--background-image-gradient-radial: radial-gradient(var(--tw-gradient-stops));
-	--background-image-gradient-conic: conic-gradient(
-		from 180deg at 50% 50%,
-		var(--tw-gradient-stops)
-	);
-
-	--color-sfyellow: #fff5d9;
-	--color-login-button: #d9d9d9;
-	--color-sf-grey-blue: #838fba;
-	--color-sf-dark-blue: #132a3e;
-	--color-sf-darker-blue: #132330;
-	--color-sf-pink: #ffc2e2;
-	--color-sf-light-blue: #2b455c;
-	--color-sf-tan: #fff5d9;
-	--color-sf-bloo: #16133d;
-	--color-sf-dark-purp: #9882ba;
-	--color-sf-purp: #edc6fa;
-	--color-background: hsl(var(--background));
-	--color-foreground: hsl(var(--foreground));
-
-	--radius-4xl: 2rem;
-	--radius-lg: var(--radius);
-	--radius-md: calc(var(--radius) - 2px);
-	--radius-sm: calc(var(--radius) - 4px);
-
-	--breakpoint-xl: 1920px;
-	--breakpoint-bruh: 600px;
-	--breakpoint-z: 1366px;
-	--breakpoint-k: 1280px;
-	--breakpoint-ok: 500px;
-
-	--font-audiowide: "Audiowide", serif;
+@font-face {
+	font-family: Anaheim;
+	font-weight: 200;
+	font-style: normal;
+	src: url("/fonts/Anaheim-VariableFont_wght.ttf") format("truetype");
 }
 
+/* I recommend declaring style variables in inline theme whenever possible -V */
+/* @see https://tailwindcss.com/docs/theme#referencing-other-variables */
+@theme inline {
+	--font-audiowide: "Audiowide", serif;
+	--font-anaheim: "Anaheim", serif;
+
+	--radius-sm: calc(var(--border-radius) - 4px);
+	--radius-md: calc(var(--border-radius) - 2px);
+	--radius-lg: var(--border-radius);
+	--radius-xl: calc(var(--border-radius) + 4px);
+
+	/* Colors for icons like accordion chevron */
+	--color-icon: #ff76fe;
+
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+
+	--color-card: var(--card);
+	--color-card-foreground: var(--card-foreground);
+
+	--color-popover: var(--popover);
+	--color-popover-foreground: var(--popover-foreground);
+
+	--color-primary: var(--primary);
+	--color-primary-foreground: var(--primary-foreground);
+	--color-secondary: var(--secondary);
+	--color-secondary-foreground: var(--secondary-foreground);
+
+	--color-accent: var(--accent);
+	--color-accent-foreground: var(--accent-foreground);
+
+	--color-muted: var(--muted);
+	--color-muted-foreground: var(--muted-foreground);
+}
+
+:root {
+	--border-radius: 0.625rem;
+
+	--padding-inline-default: 1em;
+	--padding-block-default: 0.3em;
+	--margin-default: 1rem;
+
+	/* Some recommended widths for paragraphs and elements that contain paragraphs */
+	/* These numebrs were based off of vibes */
+	--paragraph-width-default: 35rem;
+	--paragraph-width-large: 48rem;
+
+	--padding-default: 14px;
+
+	--background: oklch(1 0 0);
+	--foreground: oklch(0.141 0.005 285.823);
+
+	--card: oklch(1 0 0);
+	--card-foreground: oklch(0.141 0.005 285.823);
+
+	--popover: oklch(1 0 0);
+	--popover-foreground: oklch(0.141 0.005 285.823);
+
+	--primary: oklch(0.21 0.006 285.885);
+	--primary-foreground: oklch(0.985 0 0);
+	--secondary: oklch(0.967 0.001 286.375);
+	--secondary-foreground: oklch(0.21 0.006 285.885);
+
+	--accent: oklch(0.967 0.001 286.375);
+	--accent-foreground: oklch(0.21 0.006 285.885);
+
+	--muted: oklch(0.967 0.001 286.375);
+	--muted-foreground: oklch(0.552 0.016 285.938);
+
+	--foreground-rgb: 0, 0, 0;
+	--background-start-rgb: 214, 219, 220;
+	--background-end-rgb: 255, 255, 255;
+
+	--border-radius: 0.75rem;
+
+	--background-opacity: 0.675;
+	/* --background-color-solid: rgb(from var(--palette-1) r g b); */
+	--background-color-solid: #171324;
+	--background-color: rgb(
+		from var(--palette-1) r g b / var(--background-opacity)
+	);
+	/* --background-color-element-opaque: #16133d; */
+	--background-color-element-opaque: #43457f;
+	--background-color-element: #303160;
+	--hover-color: #4a3790;
+}
 /*
   The default border color has changed to `currentColor` in Tailwind CSS v4,
   so we've added these compatibility styles to make sure everything still
@@ -79,219 +131,19 @@ I understand that there could be some performance drop, but i doubt that it is m
 	scrollbar-width: none; /* Firefox */
 }
 
-@layer base {
-	:root {
-		--foreground-rgb: 0, 0, 0;
-		--background-start-rgb: 214, 219, 220;
-		--background-end-rgb: 255, 255, 255;
-
-		--border-radius: 0.75rem;
-
-		--palette-1: #16133d;
-		--palette-2: #9882ba;
-		--palette-3: #edc6fa;
-		--palette-4: #ffc2e2;
-		--palette-5: #fff5d9;
-
-		--background-opacity: 0.675;
-		/* --background-color-solid: rgb(from var(--palette-1) r g b); */
-		--background-color-solid: #171324;
-		--background-color: rgb(
-			from var(--palette-1) r g b / var(--background-opacity)
-		);
-		/* --background-color-element-opaque: #16133d; */
-		--background-color-element-opaque: #261d4b;
-		--background-color-element: rgb(
-			from var(--background-color-element-opaque) r g b /
-				var(--background-opacity)
-		);
-		--hover-color: #4a3790;
-
-		--rootPaddingInline: 1em;
-		--rootPaddingBlock: 0.3em;
-		--rootChildMargin: 1rem;
-	}
-
-	body {
-		min-height: 100vh;
-		min-width: 100vw;
-
-		background-repeat: no-repeat;
-		background-position: top;
-		background-size: auto 100vh;
-
-		/* Background will try to fill along width if the screen is too wide instead */
-		/* The ratio comes from the viewbox dimensions of the svg file */
-		@media (min-aspect-ratio: 1920/1028) {
-			background-size: 100vw auto;
-		}
-	}
-
-	footer {
-		background-color: #9882ba;
-		padding: 16px;
-		display: flex;
-	}
-
-	footer > * {
-		justify-self: start;
-		flex: 1;
-	}
-
-	nav {
-		padding: 1rem;
-	}
-
-	main {
-		display: flex;
-		flex-direction: column;
-		align-content: center;
-		align-items: stretch;
-
-		gap: var(--rootChildMargin);
-
-		height: 100%;
-
-		padding: 2rem 1rem;
-
-		& > * {
-			max-width: 60rem;
-
-			padding-inline: var(--rootPaddingInline);
-			padding-block: var(--rootPaddingBlock);
-
-			background-color: var(--background-color-element);
-
-			color: #ffffff;
-		}
-
-		& * {
-			border-radius: var(--border-radius);
-		}
-
-		& > strong,
-		.criticalInfo {
-			background-color: var(--background-color-element-opaque);
-			padding-inline: var(--rootPaddingInline);
-			padding-block: var(--rootPaddingBlock);
-		}
-	}
-
-	@media (max-width: 580px) {
-		main {
-			padding-left: 0.5rem;
-			padding-right: 0.5rem;
-		}
-	}
-
-	hgroup {
-		contain: content;
-
-		max-width: 544px;
-		padding: unset;
-		/* width auto is needed so that it works on release version for some reason */
-		width: auto;
-
-		background: none;
-
-		& > * {
-			margin: 0.5em 0;
-		}
-	}
-
-	h1,
-	h2,
-	h3,
-	hgroup {
-		width: fit-content;
-
-		padding-inline: var(--rootPaddingInline);
-		padding-block: var(--rootPaddingBlock);
-		margin-inline: auto;
-
-		text-align: center;
-		font-weight: bold;
-		color: #ffffff;
-
-		background-color: var(--background-color-element-opaque);
-	}
-
-	h1 {
-		max-width: 544px;
-
-		margin-block: 4rem 3rem;
-
-		font-size: xxx-large;
-	}
-
-	h2 {
-		font-size: xx-large;
-	}
-
-	h3 {
-		font-size: x-large;
-	}
-
-	p {
-		contain: content;
-
-		font-size: large;
-
-		/* text-align: center; */
-	}
-
-	.button {
-		border-radius: 1em;
-		font-size: x-large;
-
-		padding-inline: var(--rootPaddingInline);
-		padding-block: var(--rootPaddingBlock);
-
-		background-color: var(--background-color-element-opaque);
-
-		font-weight: bold;
-		color: #ffffff;
-		transition: 0.15s ease-out;
-		transition-property: background-color, scale, color;
-
-		&:hover {
-			background-color: var(--hover-color);
-			scale: 1.1;
-		}
-
-		&:focus {
-			outline: auto;
-		}
-	}
-
-	.specialButton {
-		background-image: linear-gradient(
-			-60deg,
-			var(--palette-2) 10%,
-			#bb94cd 40%,
-			var(--palette-2) 70%
-		);
-		filter: saturate(1.75);
-
-		&:hover {
-			/* translate: 0 -0.5em; */
-			animation: 2s ease-in-out 0.25s infinite alternate hover;
-		}
-	}
-
-	strong {
-		@apply text-3xl font-bold;
-
-		&[class~="criticalInfo"] {
-			@apply text-4xl;
-		}
-	}
+@utility bg-primary-gradient {
+	/* Still working on proper theme color names so the secondary hex color isn't a custom property yet*/
+	background-image: linear-gradient(
+		to bottom,
+		var(--background-color-element-opaque) 50%,
+		#303160 100%
+	);
 }
 
 @layer components {
 	.label {
-		padding-inline: var(--rootPaddingInline);
-		padding-block: var(--rootPaddingBlock);
+		padding-inline: var(--padding-inline-default);
+		padding-block: var(--padding-block-default);
 
 		background-color: var(--background-color-element-opaque);
 	}
@@ -314,124 +166,8 @@ I understand that there could be some performance drop, but i doubt that it is m
 
 		> * {
 			display: block;
-			padding-inline: var(--rootPaddingInline);
-			padding-block: var(--rootPaddingBlock);
+			padding-inline: var(--padding-inline-default);
+			padding-block: var(--padding-block-default);
 		}
-	}
-}
-
-@theme inline {
-	--radius-sm: calc(var(--radius) - 4px);
-	--radius-md: calc(var(--radius) - 2px);
-	--radius-lg: var(--radius);
-	--radius-xl: calc(var(--radius) + 4px);
-	--color-background: var(--background);
-	--color-foreground: var(--foreground);
-	--color-card: var(--card);
-	--color-card-foreground: var(--card-foreground);
-	--color-popover: var(--popover);
-	--color-popover-foreground: var(--popover-foreground);
-	--color-primary: var(--primary);
-	--color-primary-foreground: var(--primary-foreground);
-	--color-secondary: var(--secondary);
-	--color-secondary-foreground: var(--secondary-foreground);
-	--color-muted: var(--muted);
-	--color-muted-foreground: var(--muted-foreground);
-	--color-accent: var(--accent);
-	--color-accent-foreground: var(--accent-foreground);
-	--color-destructive: var(--destructive);
-	--color-border: var(--border);
-	--color-input: var(--input);
-	--color-ring: var(--ring);
-	--color-chart-1: var(--chart-1);
-	--color-chart-2: var(--chart-2);
-	--color-chart-3: var(--chart-3);
-	--color-chart-4: var(--chart-4);
-	--color-chart-5: var(--chart-5);
-	--color-sidebar: var(--sidebar);
-	--color-sidebar-foreground: var(--sidebar-foreground);
-	--color-sidebar-primary: var(--sidebar-primary);
-	--color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-	--color-sidebar-accent: var(--sidebar-accent);
-	--color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-	--color-sidebar-border: var(--sidebar-border);
-	--color-sidebar-ring: var(--sidebar-ring);
-}
-
-:root {
-	--radius: 0.625rem;
-	--background: oklch(1 0 0);
-	--foreground: oklch(0.141 0.005 285.823);
-	--card: oklch(1 0 0);
-	--card-foreground: oklch(0.141 0.005 285.823);
-	--popover: oklch(1 0 0);
-	--popover-foreground: oklch(0.141 0.005 285.823);
-	--primary: oklch(0.21 0.006 285.885);
-	--primary-foreground: oklch(0.985 0 0);
-	--secondary: oklch(0.967 0.001 286.375);
-	--secondary-foreground: oklch(0.21 0.006 285.885);
-	--muted: oklch(0.967 0.001 286.375);
-	--muted-foreground: oklch(0.552 0.016 285.938);
-	--accent: oklch(0.967 0.001 286.375);
-	--accent-foreground: oklch(0.21 0.006 285.885);
-	--destructive: oklch(0.577 0.245 27.325);
-	--border: oklch(0.92 0.004 286.32);
-	--input: oklch(0.92 0.004 286.32);
-	--ring: oklch(0.705 0.015 286.067);
-	--chart-1: oklch(0.646 0.222 41.116);
-	--chart-2: oklch(0.6 0.118 184.704);
-	--chart-3: oklch(0.398 0.07 227.392);
-	--chart-4: oklch(0.828 0.189 84.429);
-	--chart-5: oklch(0.769 0.188 70.08);
-	--sidebar: oklch(0.985 0 0);
-	--sidebar-foreground: oklch(0.141 0.005 285.823);
-	--sidebar-primary: oklch(0.21 0.006 285.885);
-	--sidebar-primary-foreground: oklch(0.985 0 0);
-	--sidebar-accent: oklch(0.967 0.001 286.375);
-	--sidebar-accent-foreground: oklch(0.21 0.006 285.885);
-	--sidebar-border: oklch(0.92 0.004 286.32);
-	--sidebar-ring: oklch(0.705 0.015 286.067);
-}
-
-.dark {
-	--background: oklch(0.141 0.005 285.823);
-	--foreground: oklch(0.985 0 0);
-	--card: oklch(0.21 0.006 285.885);
-	--card-foreground: oklch(0.985 0 0);
-	--popover: oklch(0.21 0.006 285.885);
-	--popover-foreground: oklch(0.985 0 0);
-	--primary: oklch(0.92 0.004 286.32);
-	--primary-foreground: oklch(0.21 0.006 285.885);
-	--secondary: oklch(0.274 0.006 286.033);
-	--secondary-foreground: oklch(0.985 0 0);
-	--muted: oklch(0.274 0.006 286.033);
-	--muted-foreground: oklch(0.705 0.015 286.067);
-	--accent: oklch(0.274 0.006 286.033);
-	--accent-foreground: oklch(0.985 0 0);
-	--destructive: oklch(0.704 0.191 22.216);
-	--border: oklch(1 0 0 / 10%);
-	--input: oklch(1 0 0 / 15%);
-	--ring: oklch(0.552 0.016 285.938);
-	--chart-1: oklch(0.488 0.243 264.376);
-	--chart-2: oklch(0.696 0.17 162.48);
-	--chart-3: oklch(0.769 0.188 70.08);
-	--chart-4: oklch(0.627 0.265 303.9);
-	--chart-5: oklch(0.645 0.246 16.439);
-	--sidebar: oklch(0.21 0.006 285.885);
-	--sidebar-foreground: oklch(0.985 0 0);
-	--sidebar-primary: oklch(0.488 0.243 264.376);
-	--sidebar-primary-foreground: oklch(0.985 0 0);
-	--sidebar-accent: oklch(0.274 0.006 286.033);
-	--sidebar-accent-foreground: oklch(0.985 0 0);
-	--sidebar-border: oklch(1 0 0 / 10%);
-	--sidebar-ring: oklch(0.552 0.016 285.938);
-}
-
-@layer base {
-	* {
-		@apply border-border outline-ring/50;
-	}
-	body {
-		@apply bg-background text-foreground;
 	}
 }
