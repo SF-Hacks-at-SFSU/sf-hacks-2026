@@ -11,11 +11,6 @@ Learn more about tailwind preflight here: https://tailwindcss.com/docs/preflight
 */
 @import "tailwindcss";
 
-@custom-variant dark (&:is(.dark *));
-@plugin 'tailwindcss-animate';
-
-/* Audiowide font is added locally instead of via Google Fonts for convinience. 
-I understand that there could be some performance drop, but i doubt that it is much */
 @font-face {
 	font-family: Audiowide;
 	font-weight: 400;
@@ -24,16 +19,18 @@ I understand that there could be some performance drop, but i doubt that it is m
 	src: url("/fonts/Audiowide-Regular.ttf") format("truetype");
 }
 
-/* If you for some reason don't want to inline custom properties, 
-you can put your styles in this theme style instead of theme inline
-try to keep the non-inline theme style close to the inline theme styles
-To learn more, @see https://tailwindcss.com/docs/theme#referencing-other-variables */
-/* @theme {} */
+@font-face {
+	font-family: Anaheim;
+	font-weight: 200;
+	font-style: normal;
+	src: url("/fonts/Anaheim-VariableFont_wght.ttf") format("truetype");
+}
 
 /* I recommend declaring style variables in inline theme whenever possible -V */
 /* @see https://tailwindcss.com/docs/theme#referencing-other-variables */
 @theme inline {
 	--font-audiowide: "Audiowide", serif;
+	--font-anaheim: "Anaheim", serif;
 
 	--radius-sm: calc(var(--border-radius) - 4px);
 	--radius-md: calc(var(--border-radius) - 2px);
@@ -136,7 +133,11 @@ To learn more, @see https://tailwindcss.com/docs/theme#referencing-other-variabl
 
 @utility bg-primary-gradient {
 	/* Still working on proper theme color names so the secondary hex color isn't a custom property yet*/
-	background-image: linear-gradient(to bottom, var(--background-color-element-opaque) 50%, #303160 100%);
+	background-image: linear-gradient(
+		to bottom,
+		var(--background-color-element-opaque) 50%,
+		#303160 100%
+	);
 }
 
 @layer components {
@@ -167,58 +168,6 @@ To learn more, @see https://tailwindcss.com/docs/theme#referencing-other-variabl
 			display: block;
 			padding-inline: var(--padding-inline-default);
 			padding-block: var(--padding-block-default);
-		}
-	}
-}
-
-@layer base {
-	body {
-		min-height: 100vh;
-		min-width: 100vw;
-
-		background-repeat: no-repeat;
-		background-position: top;
-		background-size: auto 100vh;
-
-		/* Background will try to fill along width if the screen is too wide instead */
-		/* The ratio comes from the viewbox dimensions of the svg file */
-		@media (min-aspect-ratio: 1920/1028) {
-			background-size: 100vw auto;
-		}
-	}
-
-	main {
-		display: flex;
-		flex-direction: column;
-		align-content: center;
-		align-items: stretch;
-
-		gap: var(--margin-default);
-
-		height: 100%;
-
-		padding: 2rem 1rem;
-
-		& > * {
-			max-width: 60rem;
-
-			padding-inline: var(--padding-inline-default);
-			padding-block: var(--padding-block-default);
-
-			background-color: var(--background-color-element);
-
-			color: #ffffff;
-		}
-
-		& * {
-			border-radius: var(--border-radius);
-		}
-	}
-
-	@media (max-width: 580px) {
-		main {
-			padding-left: 0.5rem;
-			padding-right: 0.5rem;
 		}
 	}
 }
