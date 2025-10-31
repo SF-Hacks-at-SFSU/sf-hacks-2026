@@ -3,6 +3,10 @@
 		"lib": ["dom", "dom.iterable", "esnext"],
 		"paths": {
 			"@/*": ["./src/*"],
+			// shortcut for public folder
+			// usage: import logo from "@@/img/logo.svg"
+			// instead of: import logo from "../../../public/img/logo.svg"
+			"@@/*": ["./public/*"],
 			"@nextConfig": ["./next.config.ts"]
 		},
 		"forceConsistentCasingInFileNames": true,
