@@ -1,7 +1,7 @@
 import "./globals.css";
 import { MLHBanner } from "./globalComponents/MLHBanner";
 import { ReactNode } from "react";
-
+import Navbar from "./globalComponents/NavBar";
 // Optional: if you’re using fonts
 // import { Anaheim } from "next/font/google";
 // const anaheim = Anaheim({ subsets: ["latin"], weight: ["400", "700"], display: "swap" });
@@ -38,6 +38,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 				// url("${basePath}/background.svg")`,
 				// 	}}
 			>
+				<Navbar></Navbar>
 				{children}
 				<MLHBanner></MLHBanner>
 			</body>

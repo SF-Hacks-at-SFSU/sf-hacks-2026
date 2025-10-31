@@ -7,37 +7,10 @@ import { useState } from "react";
 
 // Set menu links here
 const NAV_LINKS = [
-	{
-		name: "About Us",
-		href: "/about-us",
-		newTab: false,
-	},
-	{
-		name: "Sponsor Us",
-		href: "/sponsor-us",
-		newTab: false,
-	},
-	{
-		name: "Sponsors",
-		href: "/past-sponsors", // We really need a better system for handling routes than just renaming the routes manually
-		newTab: false,
-	},
-	// Hiding schedule and handbook for now since we don't need it
-	// {
-	// 	name: "Schedule",
-	// 	href: "/schedule",
-	// 	newTab: false,
-	// },
-	// {
-	// 	name: "Handbook",
-	// 	href: "https://docs.google.com/document/d/1Ecz-rSa1G3D9gjdr-WvC0qk9GFsEri1OL5VFNBakgG8/edit?tab=t.0#heading=h.5mlg45992779",
-	// 	newTab: true,
-	// },
-	{
-		name: "FAQs",
-		href: "/faqs",
-		newTab: false,
-	},
+	{ name: "About Us", href: "/about-us", newTab: false },
+
+	{ name: "Sponsors", href: "/past-sponsors", newTab: false },
+	{ name: "FAQs", href: "/faqs", newTab: false },
 ];
 
 // Set registration link here
@@ -93,16 +66,12 @@ interface DesktopLinksProps {
 function DesktopLinks({ className = "" }: DesktopLinksProps) {
 	return (
 		<div className={`${className} items-center font-audiowide`}>
-			{/* container for 2 divs: one for the  logo/nav links and the other for discord/IG icons */}
 			<div
-				// use flex-1 to make the div take up the full width available
-				// justify-evenly to space out the 2 divs
-				className={`flex text-[#13123e] items-center justify-evenly 
-					pointer-events-auto gap-1 md:gap-3 lg:gap-0 text-lg font-medium
-					  lg:text-xl flex-1`}
+				className={`flex items-center justify-between pointer-events-auto 
+          text-[#13123e] gap-3 text-sm md:text-base lg:text-lg font-medium
+          w-full px-6 py-2`}
 			>
-				{/* container for logo and nav links */}
-				<div className="flex gap-2 md:gap-4">
+				<div className="flex items-center gap-4 md:gap-6 lg:gap-8 justify-center flex-1">
 					<Link
 						href="/"
 						className="hidden md:block"
@@ -110,15 +79,14 @@ function DesktopLinks({ className = "" }: DesktopLinksProps) {
 						<Image
 							src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/img/logo.svg`}
 							alt="SF Hacks logo"
-							className="transition-transform duration-200 hover:scale-110 w-20"
-							width={10}
-							height={10}
-							objectFit="cover"
+							width={40}
+							height={40}
+							className="transition-transform duration-200 hover:opacity-90"
+							priority
 						/>
 					</Link>
-					{/* Navigation Links */}
-					{/* whitespace-nowrap makes text not wrap to 2 lines */}
-					<div className="flex items-center gap-1 md:gap-4 text-[#FFBD52] whitespace-nowrap">
+
+					<div className="flex items-center gap-3 md:gap-5 text-[#FFBD52] whitespace-nowrap">
 						{NAV_LINKS.map((link) => (
 							<NavLink
 								key={link.name}
@@ -131,11 +99,11 @@ function DesktopLinks({ className = "" }: DesktopLinksProps) {
 					</div>
 				</div>
 
-				<div className="flex gap-1 md:gap-4 items-center">
+				<div className="flex items-center gap-2 md:gap-3 shrink-0">
 					<a
 						href="https://discord.gg/P5PsDR6G7W"
 						target="_blank"
-						className="bg-[#6FD9FF] rounded-[20px] px-16 py-2 text-[#43457F]"
+						className="bg-[#6FD9FF] rounded-xl px-6 md:px-7 py-1.5 text-xs md:text-sm text-[#43457F]"
 					>
 						Discord
 					</a>
@@ -148,20 +116,11 @@ function DesktopLinks({ className = "" }: DesktopLinksProps) {
 							alt="instagram icon"
 							width={10}
 							height={10}
-							className="w-14"
+							className="w-8 md:w-9 lg:w-10"
 							objectFit="cover"
 						/>
 					</a>
 				</div>
-
-				{/* Register Button */}
-				{/* This button is being defined twice right now, one in the desktop navbar and the other in the mobile navbar*/}
-				{/* <a
-					href={REGISTER_LINK.href}
-					className="button text-white bg-linear-to-r from-purple-500 to-pink-500 shadow-lg hover:shadow-purple-500/25 active:scale-95"
-				>
-					{REGISTER_LINK.name}
-				</a> */}
 			</div>
 		</div>
 	);
@@ -175,35 +134,28 @@ interface MobileMenuProps {
 
 function MobileMenu({ isOpen, handleToggle, className = "" }: MobileMenuProps) {
 	return (
-		<div className={`${className}`}>
-			{/* logo and menu container */}
+		<div className={`${className} px-3 py-2`}>
 			<div className="flex items-center gap-2">
 				<button>
 					<Image
-						src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/img/logo.svg`}
+						src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/img/yellowLogo.svg`}
 						alt="sfhacks2026 logo"
 						width={10}
 						height={10}
-						className="w-20"
+						className="w-14 md:w-16"
 						objectFit="cover"
 					/>
 				</button>
-				{/* Mobile Menu Button */}
+
 				<button
 					onClick={handleToggle}
 					className="z-50 p-2 text-[#FFBD52] transition-colors duration-200 rounded-lg backdrop-blur-xs"
 				>
-					{!isOpen && (
-						<Menu
-							size={60}
-							className=""
-						/>
-					)}
+					{!isOpen && <Menu size={28} />}
 				</button>
 			</div>
 
-			{/* discord and instagram icons container */}
-			<div className="flex items-center gap-6">
+			<div className="flex items-center gap-4">
 				<a
 					href="https://discord.gg/P5PsDR6G7W"
 					target="_blank"
@@ -211,8 +163,8 @@ function MobileMenu({ isOpen, handleToggle, className = "" }: MobileMenuProps) {
 					<Image
 						src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/icons/discord.svg`}
 						alt="discord icon"
-						width={50}
-						height={50}
+						width={28}
+						height={28}
 					/>
 				</a>
 				<a
@@ -222,8 +174,8 @@ function MobileMenu({ isOpen, handleToggle, className = "" }: MobileMenuProps) {
 					<Image
 						src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/icons/instagram.svg`}
 						alt="instagram icon"
-						width={50}
-						height={50}
+						width={28}
+						height={28}
 					/>
 				</a>
 			</div>
@@ -239,13 +191,13 @@ function MobileMenu({ isOpen, handleToggle, className = "" }: MobileMenuProps) {
 						onClick={handleToggle}
 						className="p-3"
 					>
-						<X size={32} />
+						<X size={28} />
 					</button>
 				)}
 
-				<div className="flex flex-col items-center justify-center h-full">
+				<div className="flex flex-col items-center justify-center h-full px-6">
 					{/* Mobile Navigation Links */}
-					<div className="flex flex-col items-center gap-8 text-2xl text-[#13123e]">
+					<div className="flex flex-col items-center gap-6 text-lg md:text-xl text-[#13123e]">
 						<Link
 							href="/"
 							className="transition-colors hover:text-purple-500"
@@ -267,10 +219,9 @@ function MobileMenu({ isOpen, handleToggle, className = "" }: MobileMenuProps) {
 						))}
 
 						{/* Register Button */}
-						{/* This button is being defined twice right now, one in the desktop navbar and the other in the mobile navbar*/}
 						<NavLink
 							href={REGISTER_LINK.href}
-							className="px-8 py-3 mt-4 bg-[#6FD9FF] text-[#43457F] rounded-full shadow-lg active:scale-95"
+							className="px-6 py-2 mt-2 bg-[#6FD9FF] text-[#43457F] rounded-full shadow-lg active:scale-95"
 							onClick={handleToggle}
 							newTab={true}
 						>
@@ -291,7 +242,7 @@ export default function Navbar() {
 	};
 
 	return (
-		<nav className="sticky top-0 z-40 pointer-events-none  w-full">
+		<nav className="sticky top-0 z-40 pointer-events-none w-full py-2">
 			<DesktopLinks className="hidden md:flex w-full" />
 			<MobileMenu
 				isOpen={isOpen}

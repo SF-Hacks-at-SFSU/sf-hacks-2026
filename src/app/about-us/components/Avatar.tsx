@@ -9,32 +9,45 @@ interface AvatarProps {
 export default function Avatar({ member }: AvatarProps) {
 	if (!member) {
 		console.warn("Avatar rendered without valid member data");
-		return null; // skip rendering safely
+		return null;
 	}
+
+	const imgSrc = member.img.startsWith("http")
+		? member.img
+		: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${member.img}`;
+
+	const href = member.link
+		? member.link.startsWith("http")
+			? member.link
+			: `https://${member.link}`
+		: undefined;
+
 	const content = (
-		<div className="bg-white rounded-2xl overflow-hidden shadow-md flex flex-col items-center w-44 transition-transform duration-150 hover:scale-105">
-			<div className="relative w-full h-56 overflow-hidden">
+		<div className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden shadow-md flex flex-col items-center w-40 md:w-44 transition-transform duration-150 hover:scale-[1.03]">
+			<div className="relative w-full h-48 md:h-56 overflow-hidden">
 				<Image
-					src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${member.img}`}
+					src={imgSrc}
 					alt={member.name}
 					fill
 					className="object-cover"
-					sizes="(max-width: 768px) 8rem, (max-width: 1200px) 10rem, 12rem"
+					sizes="(max-width: 640px) 10rem, (max-width: 768px) 11rem, 12rem"
+					loading="lazy"
 				/>
 			</div>
-			<div className="py-3 text-lg font-semibold text-[#16133d] text-center">
-				{member.name}
+			<div className="w-full py-3 text-center">
+				<div className="font-anaheim text-[15px] md:text-base tracking-wide text-[#E6E7FF]">
+					{member.name}
+				</div>
 			</div>
 		</div>
 	);
 
-	// If a portfolio link exists, wrap the content in an anchor tag
-	return member.link ? (
+	return href ? (
 		<a
-			href={member.link}
+			href={href}
 			target="_blank"
 			rel="noopener noreferrer"
-			className="no-underline"
+			className="no-underline hover:no-underline"
 		>
 			{content}
 		</a>
@@ -42,22 +55,3 @@ export default function Avatar({ member }: AvatarProps) {
 		content
 	);
 }
-
-// export default function Avatar({ member }: AvatarProps) {
-// 	return (
-// 	  <div className="flex flex-col w-40 h-56 border-[0.3em] border-[#43457F] rounded-xl bg-[#43457F] m-3 transition-transform duration-100 ease-out hover:scale-110">
-// 		<div className="relative w-full aspect-square overflow-hidden rounded-t-xl">
-// 		  <Image
-// 			src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${member.img}`}
-// 			fill
-// 			alt={member.name}
-// 			sizes="5em 10em 20em"
-// 			className="object-cover object-top"
-// 		  />
-// 		</div>
-// 		<div className="mt-2 text-lg font-medium text-center tracking-wider text-[#16133d]">
-// 		  {member.name}
-// 		</div>
-// 	  </div>
-// 	);
-//   }

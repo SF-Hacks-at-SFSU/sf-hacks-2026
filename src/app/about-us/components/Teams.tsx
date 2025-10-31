@@ -1,8 +1,7 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Avatar from "./Avatar";
-import { useState } from "react";
 import type * as aboutUsTypes from "../types";
 
 interface TeamsProps {
@@ -16,7 +15,7 @@ export default function Teams({ teams, members }: TeamsProps) {
 	return (
 		<div className="w-full self-center">
 			{/* Tabs */}
-			<div className="flex overflow-x-auto bg-gradient-to-b from-[#2f3160] to-[#1a1a3f] rounded-t-md px-4 py-2 scrollbar-hide">
+			<div className="flex overflow-x-auto rounded-t-xl border border-white/10 bg-[#1a1942] px-2 py-2 scrollbar-hide">
 				{teams.map((team, i) => (
 					<TeamTab
 						teamIndex={i}
@@ -30,7 +29,7 @@ export default function Teams({ teams, members }: TeamsProps) {
 			</div>
 
 			{/* Members */}
-			<div className="flex flex-wrap justify-center gap-6 bg-[#43457F] rounded-b-md p-6">
+			<div className="flex flex-wrap justify-center gap-6 rounded-b-xl border-x border-b border-white/10 bg-[#2a2956] p-6">
 				{teams[activeTab].memberIndices.map((memberIndex, i) => (
 					<Avatar
 						member={members[memberIndex]}
@@ -51,11 +50,12 @@ function TeamTab({
 	const isActive = teamIndex === activeIndex;
 	return (
 		<button
-			className={`px-4 py-2 font-semibold text-base transition-colors duration-200 ${
-				isActive
-					? "bg-[#43457F] text-white rounded-t-md rounded-b-none -mb-[9px] z-10"
-					: "text-gray-300 hover:text-white"
-			}`}
+			className={`mx-1 rounded-lg px-4 py-2 text-sm md:text-base font-anaheim transition-colors duration-200
+        ${
+					isActive
+						? "bg-[#2a2956] text-white shadow-[0_0_0_1px_rgba(255,255,255,0.06)]"
+						: "text-[#FFBD52] hover:text-[#FFBD52]"
+				}`}
 			onClick={() => handleClick(teamIndex)}
 		>
 			{children}

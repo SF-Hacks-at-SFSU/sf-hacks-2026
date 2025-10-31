@@ -5,7 +5,7 @@ export function MLHBanner() {
 			id="mlh-trust-badge"
 			style={{
 				display: "block",
-				maxWidth: "100px",
+				maxWidth: "80px",
 				minWidth: "60px",
 				position: "fixed",
 				left: "50px",

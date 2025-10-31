@@ -1,10 +1,15 @@
 import React from "react";
+import Image from "next/image";
 import Teams from "./components/Teams";
 
 import type * as aboutUsTypes from "./types";
 
 const members: aboutUsTypes.member[] = [
-	{ name: "Gabby", img: "/team/gabby.jpg", link: "https://www.youtube.com/" },
+	{
+		name: "Gabby",
+		img: "/team/gabby.jpg",
+		link: "https://www.linkedin.com/in/gabriella-brown-acv/",
+	},
 	{
 		name: "Justine",
 		img: "https://hnclioapcshnrzxkx.supabase.co/storage/v1/object/public/about-us/Tech%20Team/John_Cena_3.webp",
@@ -12,7 +17,7 @@ const members: aboutUsTypes.member[] = [
 	{
 		name: "Louella",
 		img: "https://hnclioapcshnrzxkxwfd.supabase.co/storage/v1/object/public/about-us/Design%20Team/issame%20-%20Louella%20Mortel.HEIC",
-		link: "www.linkedin.com/in/louella-mortel-04b24a309",
+		link: "https://www.linkedin.com/in/louella-mortel-04b24a309",
 	},
 	{ name: "Hillary", img: "/team/hillary.jpg" },
 	{ name: "Michelle", img: "/team/michelle.jpg" },
@@ -29,7 +34,7 @@ const members: aboutUsTypes.member[] = [
 	{
 		name: "Hemasri",
 		img: "https://hnclioapcshnrzxkxwfd.supabase.co/storage/v1/object/public/about-us/Logs%20Team/Photo%20-%20hemasri%20bavisetty.jpg",
-		link: "www.linkedin.com/in/hemasri-bavisetty-43a370169",
+		link: "https://www.linkedin.com/in/hemasri-bavisetty-43a370169",
 	},
 	{ name: "Vireak", img: "/team/v.jpg" },
 	{ name: "Brandon", img: "/team/brandon.jpg" },
@@ -87,14 +92,14 @@ const members: aboutUsTypes.member[] = [
 	},
 	{ name: "Akim", img: "/team/akim.jpg" },
 	{ name: "Avinh", img: "/team/avinh.jpg" },
-	{ name: "Kushvi", img: "/team/kushvi.jpg" }, //needs image
+	{ name: "Kushvi", img: "/team/kushvi.jpg" },
 	{
 		name: "Om",
 		img: "https://hnclioapcshnrzxkxwfd.supabase.co/storage/v1/object/public/about-us/Outreach%20Team/1727065039451%20(1)%20-%20Om%20Pandya.jpeg",
 		link: "https://www.linkedin.com/in/om-pandya-9a5014272",
-	}, //needs image
-	{ name: "Krrish", img: "/team/krrish.jpg" }, //needs image
-	{ name: "Kunj", img: "/team/kunj.jpg" }, //needs image
+	},
+	{ name: "Krrish", img: "/team/krrish.jpg" },
+	{ name: "Kunj", img: "/team/kunj.jpg" },
 	{
 		name: "Rohith",
 		img: "https://hnclioapcshnrzxkxwfd.supabase.co/storage/v1/object/public/about-us/Tech%20Team/WhatsApp%20Image%202025-10-20%20at%2018.31.55.jpeg",
@@ -216,7 +221,6 @@ const teams: aboutUsTypes.team[] = [
 		memberIndices: [
 			membersEnum.Keith,
 			membersEnum.Malhar,
-			//membersEnum.Nalia,
 			membersEnum.Rishita,
 			membersEnum.Said,
 			membersEnum.Sukrit,
@@ -249,37 +253,47 @@ const teams: aboutUsTypes.team[] = [
 
 export default function Page() {
 	return (
-		<main className="w-full p-8 space-y-12">
-			<h1 className="text-3xl font-bold mb-6">About Us</h1>
+		<main className="w-full px-6 md:px-8 py-10 space-y-12 bg-[#030528]">
+			<div className="mx-auto w-full max-w-6xl">
+				<h1 className="text-center font-audiowide text-3xl md:text-4xl text-[#FFBD52]">
+					About Us
+				</h1>
 
-			<section className="flex flex-col md:flex-row items-center justify-center gap-8 mx-auto">
-				{/* left image */}
-				<div className="flex-1 h-64 bg-gray-300 rounded-lg overflow-hidden">
-					<img
-						src="https://hnclioapcshnrzxkxwfd.supabase.co/storage/v1/object/public/about-us/Tech%20Team/sfh_team.jpg"
-						alt="Team"
-						className="w-full h-full object-cover"
+				<section className="mt-8 flex flex-col md:flex-row items-center justify-center gap-8">
+					{/* left image */}
+					<div className="flex-1 rounded-xl overflow-hidden border border-white/10 bg-white/5">
+						<div className="relative w-full h-[260px] md:h-[320px]">
+							<Image
+								src="https://hnclioapcshnrzxkxwfd.supabase.co/storage/v1/object/public/about-us/Tech%20Team/sfh_team.jpg"
+								alt="Team"
+								fill
+								sizes="(max-width: 768px) 100vw, 50vw"
+								className="object-cover"
+								priority
+							/>
+						</div>
+					</div>
+
+					<div className="flex-1 rounded-xl border border-white/10 bg-[#1a1942] p-6 shadow-[0_0_0_1px_rgba(255,255,255,0.02)]">
+						<p className="text-2xl font-medium text-[#FFBD52] mb-3 font-audiowide">
+							Meet Our Team
+						</p>
+						<p className="text-[#E6E7FF]/90 leading-7">
+							SF Hacks is more than just an event, we are a team of passionate
+							individuals dedicated to hosting this hackathon. Our diverse team
+							spans across logistics, design, tech operations, social
+							engagement, marketing, and outreach.
+						</p>
+					</div>
+				</section>
+
+				<section className="mt-10">
+					<Teams
+						teams={teams}
+						members={members}
 					/>
-				</div>
-
-				{/* right text box */}
-				<div className="flex-1 bg-[#2f3160] text-[#fdf4dc] p-6 rounded-xl shadow-lg">
-					<p className="text-2xl font-medium text-[#FFBD52] mb-4 font-[Lexend]">
-						Meet Our Team
-					</p>
-					<p>
-						SF Hacks is more than just an event, we are a team of passionate
-						individuals dedicated to hosting this hackathon. Our diverse team
-						spans across logistics, design, tech operations, social engagement,
-						marketing, and outreach.
-					</p>
-				</div>
-			</section>
-
-			<Teams
-				teams={teams}
-				members={members}
-			/>
+				</section>
+			</div>
 		</main>
 	);
 }
