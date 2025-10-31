@@ -14,10 +14,9 @@ export default function Teams({ teams, members }: TeamsProps) {
 	const [activeTab, updateActiveTab] = useState(0);
 
 	return (
-		/* The component should have more flexbility with class name stylings in the future
-		instead of having the styles be hardcoded */
-		<div className="teams self-center">
-			<div className="tabs">
+		<div className="w-full self-center">
+			{/* Tabs */}
+			<div className="flex overflow-x-auto bg-gradient-to-b from-[#2f3160] to-[#1a1a3f] rounded-t-md px-4 py-2 scrollbar-hide">
 				{teams.map((team, i) => (
 					<TeamTab
 						teamIndex={i}
@@ -29,7 +28,9 @@ export default function Teams({ teams, members }: TeamsProps) {
 					</TeamTab>
 				))}
 			</div>
-			<div className="members">
+
+			{/* Members */}
+			<div className="flex flex-wrap justify-center gap-6 bg-[#43457F] rounded-b-md p-6">
 				{teams[activeTab].memberIndices.map((memberIndex, i) => (
 					<Avatar
 						member={members[memberIndex]}
@@ -41,30 +42,30 @@ export default function Teams({ teams, members }: TeamsProps) {
 	);
 }
 
-interface TeamTabProps {
-	children: React.ReactNode;
-	teamIndex: number;
-	activeIndex: number;
-	handleClick: (teamindex: number) => void;
-}
-
 function TeamTab({
 	teamIndex,
 	activeIndex,
 	handleClick,
 	children,
 }: TeamTabProps) {
-	const isActive = teamIndex == activeIndex;
+	const isActive = teamIndex === activeIndex;
 	return (
 		<button
-			className="tab"
+			className={`px-4 py-2 font-semibold text-base transition-colors duration-200 ${
+				isActive
+					? "bg-[#43457F] text-white rounded-t-md rounded-b-none -mb-[9px] z-10"
+					: "text-gray-300 hover:text-white"
+			}`}
 			onClick={() => handleClick(teamIndex)}
-			key={teamIndex}
-			disabled={isActive}
 		>
-			{/* The first div is for background purposes */}
-			<div></div>
-			<div>{children}</div>
+			{children}
 		</button>
 	);
+}
+
+interface TeamTabProps {
+	children: React.ReactNode;
+	teamIndex: number;
+	activeIndex: number;
+	handleClick: (teamindex: number) => void;
 }
