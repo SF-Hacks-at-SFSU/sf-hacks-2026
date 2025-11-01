@@ -67,7 +67,7 @@ function DesktopLinks({ className = "" }: DesktopLinksProps) {
 	return (
 		<div className={`${className} items-center font-audiowide`}>
 			<div
-				className={`flex items-center justify-between pointer-events-auto 
+				className={`flex items-center pointer-events-auto relative
           text-[#13123e] gap-3 text-sm md:text-base lg:text-lg font-medium
           w-full px-6 py-2`}
 			>
@@ -86,7 +86,7 @@ function DesktopLinks({ className = "" }: DesktopLinksProps) {
 						/>
 					</Link>
 
-					<div className="flex items-center gap-3 md:gap-5 text-[#FFBD52] whitespace-nowrap">
+					<div className="flex items-center gap-3 md:gap-6 text-[#FFBD52] whitespace-nowrap">
 						{NAV_LINKS.map((link) => (
 							<NavLink
 								key={link.name}
@@ -99,7 +99,7 @@ function DesktopLinks({ className = "" }: DesktopLinksProps) {
 					</div>
 				</div>
 
-				<div className="flex items-center gap-2 md:gap-3 shrink-0">
+				<div className="flex items-center gap-2 md:gap-3 shrink-0 absolute right-4">
 					<a
 						href="https://discord.gg/P5PsDR6G7W"
 						target="_blank"
