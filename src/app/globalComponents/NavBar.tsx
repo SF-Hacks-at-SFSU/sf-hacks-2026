@@ -134,11 +134,11 @@ interface MobileMenuProps {
 
 function MobileMenu({ isOpen, handleToggle, className = "" }: MobileMenuProps) {
 	return (
-		<div className={`${className} px-3 py-2 font-anaheim font-bold text-2xl`}>
+		<div className={`${className} px-3 py-2 font-anaheim font-bold text-4xl`}>
 			<div className="flex items-center gap-4">
 				<button
 					onClick={handleToggle}
-					className="z-50 p-2 text-[#FFBD52] transition-colors duration-200 rounded-lg backdrop-blur-xs"
+					className="z-50 p-2 text-[#FFBD52] transition-colors duration-200 rounded-lg"
 				>
 					{!isOpen && <Menu size={28} />}
 				</button>
@@ -168,8 +168,8 @@ function MobileMenu({ isOpen, handleToggle, className = "" }: MobileMenuProps) {
 
 			{/* Full Screen Mobile Menu */}
 			<div
-				className={`fixed inset-0 z-40   bg-[#303160] transform transition-transform duration-300 ease-in-out ${
-					isOpen ? "translate-x-1/20" : "translate-x-full"
+				className={`fixed inset-y-0 right-0 z-40 bg-[#303160] transition-transform duration-300 ease-in-out ${
+					isOpen ? "translate-x-0 w-4/5" : "translate-x-full"
 				}`}
 			>
 				{isOpen && (
@@ -178,7 +178,7 @@ function MobileMenu({ isOpen, handleToggle, className = "" }: MobileMenuProps) {
 						className="p-3"
 					>
 						<X
-							size={28}
+							size={40}
 							color="#FFBD52"
 						/>
 					</button>
@@ -186,7 +186,7 @@ function MobileMenu({ isOpen, handleToggle, className = "" }: MobileMenuProps) {
 
 				<div className="flex flex-col items-center justify-center h-full px-6 ">
 					{/* Mobile Navigation Links */}
-					<div className="flex flex-col items-center gap-6 text-[#FFBD52]">
+					<div className="flex flex-col items-center gap-10 text-[#FFBD52] h-4/5">
 						<Link
 							href="/"
 							className="transition-colors hover:text-purple-500"
