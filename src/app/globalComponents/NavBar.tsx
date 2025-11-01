@@ -134,7 +134,7 @@ interface MobileMenuProps {
 
 function MobileMenu({ isOpen, handleToggle, className = "" }: MobileMenuProps) {
 	return (
-		<div className={`${className} px-3 py-2`}>
+		<div className={`${className} px-3 py-2 font-anaheim font-bold text-2xl`}>
 			<div className="flex items-center gap-4">
 				<button
 					onClick={handleToggle}
@@ -168,8 +168,8 @@ function MobileMenu({ isOpen, handleToggle, className = "" }: MobileMenuProps) {
 
 			{/* Full Screen Mobile Menu */}
 			<div
-				className={`fixed inset-0 z-40 bg-[#FFBD52] transform transition-transform duration-300 ease-in-out ${
-					isOpen ? "translate-x-0" : "translate-x-full"
+				className={`fixed inset-0 z-40   bg-[#303160] transform transition-transform duration-300 ease-in-out ${
+					isOpen ? "translate-x-1/20" : "translate-x-full"
 				}`}
 			>
 				{isOpen && (
@@ -177,13 +177,16 @@ function MobileMenu({ isOpen, handleToggle, className = "" }: MobileMenuProps) {
 						onClick={handleToggle}
 						className="p-3"
 					>
-						<X size={28} />
+						<X
+							size={28}
+							color="#FFBD52"
+						/>
 					</button>
 				)}
 
-				<div className="flex flex-col items-center justify-center h-full px-6">
+				<div className="flex flex-col items-center justify-center h-full px-6 ">
 					{/* Mobile Navigation Links */}
-					<div className="flex flex-col items-center gap-6 text-lg md:text-xl text-[#13123e]">
+					<div className="flex flex-col items-center gap-6 text-[#FFBD52]">
 						<Link
 							href="/"
 							className="transition-colors hover:text-purple-500"
