@@ -135,27 +135,13 @@ interface MobileMenuProps {
 function MobileMenu({ isOpen, handleToggle, className = "" }: MobileMenuProps) {
 	return (
 		<div className={`${className} px-3 py-2`}>
-			<div className="flex items-center gap-2">
-				<button>
-					<Image
-						src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/img/yellowLogo.svg`}
-						alt="sfhacks2026 logo"
-						width={10}
-						height={10}
-						className="w-14 md:w-16"
-						objectFit="cover"
-					/>
-				</button>
-
+			<div className="flex items-center gap-4">
 				<button
 					onClick={handleToggle}
 					className="z-50 p-2 text-[#FFBD52] transition-colors duration-200 rounded-lg backdrop-blur-xs"
 				>
 					{!isOpen && <Menu size={28} />}
 				</button>
-			</div>
-
-			<div className="flex items-center gap-4">
 				<a
 					href="https://discord.gg/P5PsDR6G7W"
 					target="_blank"
@@ -247,7 +233,7 @@ export default function Navbar() {
 			<MobileMenu
 				isOpen={isOpen}
 				handleToggle={handleToggle}
-				className="md:hidden pointer-events-auto flex justify-between"
+				className="md:hidden pointer-events-auto flex justify-end"
 			/>
 		</nav>
 	);
