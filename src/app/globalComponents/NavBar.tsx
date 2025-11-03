@@ -166,9 +166,9 @@ function MobileMenu({ isOpen, handleToggle, className = "" }: MobileMenuProps) {
 				</a>
 			</div>
 
-			{/* Full Screen Mobile Menu */}
+			{/* Mobile Sidebar */}
 			<div
-				className={`fixed inset-y-0 right-0 z-40 bg-[#303160] transition-transform duration-300 ease-in-out ${
+				className={`fixed inset-y-0 right-0 z-40 bg-[#FFBD52] text-[#303160] transition-transform duration-300 ease-in-out ${
 					isOpen ? "translate-x-0 w-4/5" : "translate-x-full"
 				}`}
 			>
@@ -179,14 +179,14 @@ function MobileMenu({ isOpen, handleToggle, className = "" }: MobileMenuProps) {
 					>
 						<X
 							size={40}
-							color="#FFBD52"
+							color="#303160"
 						/>
 					</button>
 				)}
 
 				<div className="flex flex-col items-center justify-center h-full px-6 ">
 					{/* Mobile Navigation Links */}
-					<div className="flex flex-col items-center gap-10 text-[#FFBD52] h-4/5">
+					<div className="flex flex-col items-center gap-10  h-4/5">
 						<Link
 							href="/"
 							className="transition-colors hover:text-purple-500"
