@@ -3,7 +3,7 @@ import FAQ from "./components/Faqs";
 
 export default function FAQPage() {
 	return (
-		<main className="bg-[#030528] px-4 py-16">
+		<main className="px-4 py-12">
 			<div className="mx-auto w-full max-w-6xl text-center">
 				<h1 className="font-audiowide text-white text-3xl md:text-4xl mb-3">
 					Frequently Asked Questions!

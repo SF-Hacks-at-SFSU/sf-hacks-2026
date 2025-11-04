@@ -220,7 +220,7 @@ const teams: aboutUsTypes.team[] = [
 
 export default function Page() {
 	return (
-		<main className="w-full px-6 md:px-8 py-10 space-y-12 bg-[#030528]">
+		<main className="w-full px-6 md:px-8 py-10 space-y-12">
 			<div className="mx-auto w-full max-w-6xl">
 				<h1 className="text-center font-audiowide text-3xl md:text-4xl text-[#FFBD52]">
 					About Us
