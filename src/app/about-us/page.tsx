@@ -16,7 +16,7 @@ const members: aboutUsTypes.member[] = [
 	},
 	{
 		name: "Louella",
-		img: "https://hnclioapcshnrzxkxwfd.supabase.co/storage/v1/object/public/about-us/Design%20Team/issame%20-%20Louella%20Mortel.HEIC",
+		img: "https://hnclioapcshnrzxkxwfd.supabase.co/storage/v1/object/public/about-us/Design%20Team/issame_-_Louella_Mortel.jpg",
 		link: "https://www.linkedin.com/in/louella-mortel-04b24a309",
 	},
 	{ name: "Hillary", img: "/team/hillary.jpg" },
@@ -39,7 +39,11 @@ const members: aboutUsTypes.member[] = [
 	{ name: "Vireak", img: "/team/v.jpg" },
 	{ name: "Brandon", img: "/team/brandon.jpg" },
 	{ name: "Matthew", img: "/team/matthew.jpg" },
-	{ name: "Gavin", img: "/team/gavin.jpg" },
+	{
+		name: "Gavin",
+		img: "https://hnclioapcshnrzxkxwfd.supabase.co/storage/v1/object/public/about-us/Exec%20Team/gavin.jpg",
+		link: "https://www.linkedin.com/in/gavinwren",
+	},
 	{ name: "Adan", img: "/team/adan.jpg" },
 	{ name: "Grishma", img: "/team/grishma.jpg" },
 	{ name: "Christian", img: "/team/christian.jpg" },
@@ -81,7 +85,7 @@ const members: aboutUsTypes.member[] = [
 	{ name: "Jim", img: "/team/jim.jpg" },
 	{
 		name: "Abha",
-		img: "https://hnclioapcshnrzxkxwfd.supabase.co/storage/v1/object/public/about-us/Outreach%20Team/Edited-150-compressed%20-%20Abha%20Deshpande.pdf",
+		img: "https://hnclioapcshnrzxkxwfd.supabase.co/storage/v1/object/public/about-us/Outreach%20Team/Edited-150-compressed%20-%20Abha%20Deshpande-modified.jpg",
 		link: "https://www.linkedin.com/in/abha-deshpande-2303b7224/",
 	},
 	{ name: "James", img: "/team/james.jpg" },
@@ -104,6 +108,16 @@ const members: aboutUsTypes.member[] = [
 		name: "Rohith",
 		img: "https://hnclioapcshnrzxkxwfd.supabase.co/storage/v1/object/public/about-us/Tech%20Team/WhatsApp%20Image%202025-10-20%20at%2018.31.55.jpeg",
 		link: "https://www.linkedin.com/in/gannoju-rohith/",
+	},
+	{
+		name: "Tin",
+		img: "https://hnclioapcshnrzxkxwfd.supabase.co/storage/v1/object/public/about-us/Design%20Team/IMG_2828_-_Tin_Ngo.jpg",
+		link: "https://www.linkedin.com/in/tin-ngo-30a994309/",
+	},
+	{
+		name: "Aaryan",
+		img: "https://hnclioapcshnrzxkxwfd.supabase.co/storage/v1/object/public/about-us/Market%20Team/IMG_0795%20-%20AARYAN%20SEHGAL.jpeg",
+		link: "https://www.linkedin.com/in/aaryan-sehgal-5b8b13327",
 	},
 ];
 
@@ -153,6 +167,8 @@ enum membersEnum {
 	Krrish,
 	Kunj,
 	Rohith,
+	Tin,
+	Aaryan,
 }
 
 const teams: aboutUsTypes.team[] = [
@@ -167,6 +183,7 @@ const teams: aboutUsTypes.team[] = [
 			membersEnum.Justine,
 			membersEnum.Cecil,
 			membersEnum.Hiro,
+			membersEnum.Tin,
 		],
 	},
 	{
@@ -214,7 +231,12 @@ const teams: aboutUsTypes.team[] = [
 	},
 	{
 		name: "Marketing",
-		memberIndices: [membersEnum.John, membersEnum.Trish, membersEnum.William],
+		memberIndices: [
+			membersEnum.John,
+			membersEnum.Trish,
+			membersEnum.William,
+			membersEnum.Aaryan,
+		],
 	},
 	{
 		name: "Outreach",
@@ -259,10 +281,9 @@ export default function Page() {
 					About Us
 				</h1>
 
-				<section className="mt-8 flex flex-col md:flex-row items-center justify-center gap-8">
-					{/* left image */}
-					<div className="flex-1 rounded-xl overflow-hidden border border-white/10 bg-white/5">
-						<div className="relative w-full h-[260px] md:h-[320px]">
+				<section className="mt-8 flex flex-col md:flex-row items-center justify-center gap-8 min-w-0">
+					<div className="md:flex-1 w-full min-w-0 rounded-xl overflow-hidden border border-white/10 bg-white/5">
+						<div className="relative flex-none w-full h-[260px] min-h-[260px] md:h-[320px]">
 							<Image
 								src="https://hnclioapcshnrzxkxwfd.supabase.co/storage/v1/object/public/about-us/Tech%20Team/sfh_team.jpg"
 								alt="Team"
@@ -274,7 +295,8 @@ export default function Page() {
 						</div>
 					</div>
 
-					<div className="flex-1 rounded-xl border border-white/10 bg-[#1a1942] p-6 shadow-[0_0_0_1px_rgba(255,255,255,0.02)]">
+					{/* right text box */}
+					<div className="md:flex-1 w-full min-w-0 rounded-sm border border-white/10 bg-[#1a1942] p-6 shadow-[0_0_0_1px_rgba(255,255,255,0.02)]">
 						<p className="text-2xl font-medium text-[#FFBD52] mb-3 font-audiowide">
 							Meet Our Team
 						</p>
