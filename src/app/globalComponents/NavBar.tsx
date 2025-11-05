@@ -59,7 +59,7 @@ function DesktopLinks() {
 	return (
 		<div className="hidden md:flex w-full justify-center pb-5">
 			<div className="pointer-events-auto mx-auto max-w-6xl px-4">
-				<div className="grid grid-cols-[auto_1fr_auto] items-center gap-3 rounded-2xl px-4 py-2 bg-[#0b0f2e]/75 backdrop-blur-sm shadow-lg ring-1 ring-white/10">
+				<div className="grid grid-cols-[auto_1fr_auto] items-center gap-6 rounded-2xl px-4 py-2 bg-[#0b0f2e]/75 backdrop-blur-sm shadow-lg ring-1 ring-white/10">
 					<Link
 						href="/"
 						className="flex items-center"
