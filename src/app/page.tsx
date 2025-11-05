@@ -65,15 +65,17 @@ export default function Home() {
 					</p>
 
 					<div className="flex gap-3 justify-center flex-wrap ">
-						<button
+						<a
 							className="
 								border bg-[#6FD9FF] text-black rounded-full 
 								px-3 py-2 font-anaheim font-semibold 
 								text-base sm:text-lg md:text-xl
 							"
+							href="https://app.sfhacks.io/"
+							target="_blank"
 						>
 							Apply
-						</button>
+						</a>
 					</div>
 				</div>
 			</div>
@@ -88,9 +90,13 @@ export default function Home() {
 						SF Hacks 2026
 					</p>
 					<div className="flex gap-4 justify-center mt-2">
-						<button className="border bg-[#6FD9FF] text-black rounded-full px-3 py-2 font-anaheim font-semibold text-base lg:text-lg xl:text-xl 2xl:text-2xl transition-transform duration-150 hover:scale-105">
+						<a
+							className="border bg-[#6FD9FF] text-black rounded-full px-3 py-2 font-anaheim font-semibold text-base lg:text-lg xl:text-xl 2xl:text-2xl transition-transform duration-150 hover:scale-105"
+							href="https://app.sfhacks.io/"
+							target="_blank"
+						>
 							Apply
-						</button>
+						</a>
 					</div>
 				</div>
 			</div>

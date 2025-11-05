@@ -13,7 +13,7 @@ const NAV_LINKS = [
 
 const REGISTER_LINK = {
 	name: "Register",
-	href: "https://tally.so/r/nrRZRN",
+	href: "https://app.sfhacks.io/",
 };
 
 function NavLink({
