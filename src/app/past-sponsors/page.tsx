@@ -30,15 +30,21 @@ export default function PastSponsorsPage() {
         "
 			>
 				<div className="w-full max-w-3xl md:max-w-4xl lg:max-w-5xl">
-					<Image
-						src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/sponsor-logos/current/OpenMind.svg`}
-						alt="OpenMind — Title Sponsor"
-						width={1600}
-						height={600}
-						priority
-						className="w-full h-auto mx-auto"
-						sizes="(max-width: 640px) 90vw, (max-width: 1024px) 70vw, 60vw"
-					/>
+					<a
+						href="https://openmind.org"
+						target="_blank"
+						className=" cursor-pointer "
+					>
+						<Image
+							src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/sponsor-logos/current/OpenMind.svg`}
+							alt="OpenMind — Title Sponsor"
+							width={1600}
+							height={600}
+							priority
+							className="w-full h-auto mx-auto hover:scale-105 transition delay-200"
+							sizes="(max-width: 640px) 90vw, (max-width: 1024px) 70vw, 60vw"
+						/>
+					</a>
 				</div>
 			</section>
 
