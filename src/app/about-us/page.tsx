@@ -85,8 +85,8 @@ const members: aboutUsTypes.member[] = [
 		img: "/team/om.jpeg",
 		link: "https://www.linkedin.com/in/om-pandya-9a5014272",
 	},
-	{ name: "Krrish", img: "/team/krrish.jpg" },
-	{ name: "Kunj", img: "/team/kunj.jpg" },
+	{ name: "Krrish", img: "/team/gator.jpeg" },
+	{ name: "Kunj", img: "/team/gator1.jpg" },
 	{
 		name: "Rohith",
 		img: "/team/rohith.jpeg",
