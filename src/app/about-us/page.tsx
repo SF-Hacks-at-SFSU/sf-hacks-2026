@@ -121,11 +121,7 @@ const members: aboutUsTypes.member[] = [
 		img: "/team/jim.jpg",
 		link: "https://www.linkedin.com",
 	},
-	{
-		name: "Anas",
-		img: "/team/anas.png",
-		link: "https://www.linkedin.com/in/anas-farhan-944212216/",
-	},
+
 	{
 		name: "Abha",
 		img: "/team/abha.png",
@@ -158,7 +154,7 @@ enum membersEnum {
 	Palak,
 	Sophia,
 	Jim,
-	Anas,
+
 	Abha,
 }
 
@@ -207,7 +203,7 @@ const teams: aboutUsTypes.team[] = [
 		memberIndices: [
 			membersEnum.Om,
 			membersEnum.Said,
-			membersEnum.Anas,
+
 			membersEnum.Kareem,
 			membersEnum.Abha,
 		],
