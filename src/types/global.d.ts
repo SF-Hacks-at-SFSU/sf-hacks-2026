@@ -23,5 +23,13 @@ declare namespace NodeJS {
 		 * @see https://github.com/nextjs/deploy-github-pages/blob/main/next.config.ts
 		 */
 		NEXT_PUBLIC_BASE_PATH: string | undefined;
+		/**
+		 * Checks whether the repository is using a custom domain for GitHub Pages
+		 *
+		 * The environment variable is set in the nextjs.yml file
+		 *
+		 * If you rename this variable, make sure to update its name in .github/workflows/nextjs.yml.
+		 */
+		GITHUB_PAGES_HAS_CUSTOM_DOMAIN: string | undefined;
 	}
 }

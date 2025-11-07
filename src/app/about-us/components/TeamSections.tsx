@@ -13,15 +13,17 @@ export function TeamSections({ teams, members }: TeamSectionsProps) {
 			{teams.map((team) => (
 				<section
 					key={team.name}
-					className="teamsContainer"
+					className="my-8"
 				>
-					<h3>{team.name}</h3>
-					<div className="teamMembersContainer">
+					<h3 className="text-2xl font-semibold mb-4 text-center text-[#fdf4dc]">
+						{team.name}
+					</h3>
+					<div className="flex flex-wrap justify-center gap-6 bg-[#43457F] rounded-md p-6">
 						{team.memberIndices.map((index) => (
 							<Avatar
 								key={members[index].name}
 								member={members[index]}
-							></Avatar>
+							/>
 						))}
 					</div>
 				</section>

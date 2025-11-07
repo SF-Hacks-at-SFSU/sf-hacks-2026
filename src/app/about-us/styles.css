@@ -56,8 +56,8 @@
 		}
 
 		& div:last-child {
-			padding-inline: var(--rootPaddingInline);
-			padding-block-start: var(--rootPaddingBlock);
+			padding-inline: var(--padding-inline-default);
+			padding-block-start: var(--padding-block-default);
 			padding-block-end: 0.5rem;
 		}
 	}
