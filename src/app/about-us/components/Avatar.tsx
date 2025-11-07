@@ -23,7 +23,7 @@ export default function Avatar({ member }: AvatarProps) {
 		: undefined;
 
 	const content = (
-		<div className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden shadow-md flex flex-col items-center w-40 md:w-44 transition-transform duration-150 hover:scale-[1.03]">
+		<div className="bg-white/5 rounded-2xl overflow-hidden shadow-md flex flex-col items-center w-40 md:w-44 transition-transform duration-150 hover:scale-[1.03]">
 			<div className="relative w-full h-48 md:h-56 overflow-hidden">
 				<Image
 					src={imgSrc}

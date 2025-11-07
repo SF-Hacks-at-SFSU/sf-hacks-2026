@@ -5,10 +5,10 @@ export function MLHBanner() {
 			id="mlh-trust-badge"
 			style={{
 				display: "block",
-				maxWidth: "80px",
-				minWidth: "60px",
-				position: "fixed",
-				left: "50px",
+				maxWidth: "60px",
+				minWidth: "40px",
+				position: "absolute",
+				left: "30px",
 				top: 0,
 				width: "10%",
 				// zIndex: 10000,

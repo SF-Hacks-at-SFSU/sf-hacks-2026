@@ -14,35 +14,24 @@ const qnaColumnGroups = [qnaColumnFirst, qnaColumnSecond];
 
 function FAQ() {
 	return (
-		<div className="mx-auto w-full">
-			<div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+		<div className="mx-auto w-full ">
+			<div className="grid grid-cols-1 md:grid-cols-2  md:gap-6 rounded-md">
 				{qnaColumnGroups.map((group, idx) => (
 					<Accordion
 						key={`col-${idx}`}
 						type="multiple"
-						className="w-full "
+						className="w-full rounded-md "
 					>
 						{group.map((qa, i) => (
 							<AccordionItem
 								key={i}
 								value={`${idx}-${i}`}
-								className="group overflow-hidden border-[0.1px]  border-white bg-white/5"
+								className="rounded-md border border-none "
 							>
-								<AccordionTrigger className="px-4 py-3 bg-[#303160] text-white font-anaheim font-bold hover:bg-[#3a2f6d] hover:text-[#FF76FE] transition text-left ">
+								<AccordionTrigger className="rounded-mds px-4 py-3 bg-[#1a1942] text-[#FFBD52] font-audiowide font-bold  hover:bg-[#3a2f6d] transition hover:underline-none">
 									{qa.question}
 								</AccordionTrigger>
-
-								<AccordionContent
-									className="
-                    px-4 py-3 bg-[#1a1942] border-t border-white/10
-                    text-[#E6E7FF]/90 text-sm leading-6
-                    [&_p]:mb-3 [&_p:last-child]:mb-0
-                    [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:mb-3
-                    [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:mb-3
-                    [&_a]:text-[#6FD9FF] hover:[&_a]:text-[#B873FF] [&_a]:underline
-                    [&_strong]:text-white
-                  "
-								>
+								<AccordionContent className="rounded-xl px-4 py-3  ">
 									{qa.answer}
 								</AccordionContent>
 							</AccordionItem>
