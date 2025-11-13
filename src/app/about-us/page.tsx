@@ -121,12 +121,6 @@ const members: aboutUsTypes.member[] = [
 		img: "/team/jim.jpg",
 		link: "https://www.linkedin.com",
 	},
-
-	{
-		name: "Abha",
-		img: "/team/abha.png",
-		link: "https://www.linkedin.com/in/abha-deshpande-2303b7224/",
-	},
 ];
 
 enum membersEnum {
@@ -154,8 +148,6 @@ enum membersEnum {
 	Palak,
 	Sophia,
 	Jim,
-
-	Abha,
 }
 
 const teams: aboutUsTypes.team[] = [
@@ -200,13 +192,7 @@ const teams: aboutUsTypes.team[] = [
 	},
 	{
 		name: "Outreach",
-		memberIndices: [
-			membersEnum.Om,
-			membersEnum.Said,
-
-			membersEnum.Kareem,
-			membersEnum.Abha,
-		],
+		memberIndices: [membersEnum.Om, membersEnum.Said, membersEnum.Kareem],
 	},
 	{
 		name: "Publicity",
