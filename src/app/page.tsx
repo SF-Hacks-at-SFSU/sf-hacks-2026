@@ -76,6 +76,15 @@ export default function Home() {
 						>
 							Apply
 						</a>
+						<a
+							className="flex items-center opacity-85 hover:opacity-100 border bg-black 
+								text-white rounded-full px-3 py-2 font-anaheim font-semibold text-base 
+								sm:text-lg md:text-xl transition-transform duration-150 hover:scale-105"
+							href="https://www.youtube.com/watch?v=gNIjTGIuQFY&feature=youtu.be"
+							target="_blank"
+						>
+							Trailer
+						</a>
 					</div>
 				</div>
 			</div>
@@ -91,11 +100,18 @@ export default function Home() {
 					</p>
 					<div className="flex gap-4 justify-center mt-2">
 						<a
-							className="border bg-[#6FD9FF] text-black rounded-full px-3 py-2 font-anaheim font-semibold text-base lg:text-lg xl:text-xl 2xl:text-2xl transition-transform duration-150 hover:scale-105"
+							className="border bg-[#6FD9FF] text-black rounded-full px-16 py-3 font-anaheim font-semibold text-base lg:text-lg xl:text-xl 2xl:text-2xl transition-transform duration-150 hover:scale-105"
 							href="https://app.sfhacks.io/"
 							target="_blank"
 						>
 							Apply
+						</a>
+						<a
+							className="opacity-85 hover:opacity-100 border bg-black text-white rounded-full px-16 py-3 font-anaheim font-semibold text-base lg:text-lg xl:text-xl 2xl:text-2xl transition-transform duration-150 hover:scale-105"
+							href="https://www.youtube.com/watch?v=gNIjTGIuQFY&feature=youtu.be"
+							target="_blank"
+						>
+							Trailer
 						</a>
 					</div>
 				</div>
