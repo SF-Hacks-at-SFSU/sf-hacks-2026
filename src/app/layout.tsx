@@ -27,16 +27,13 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 			{/* Add a global class or font variable if needed */}
 			<body
 				className="min-h-screen bg-[#030528] text-white antialiased"
-				// Turning this off for now, we will have to use this for when we have the new grid background set up
-				// style={{
-				// 		backgroundColor: "var(--background-color-solid)",
-				// 		backgroundImage: `linear-gradient(
-				// 	rgb(from var(--background-color-solid) r g b / 0) 90vh,
-				// 	rgb(from var(--background-color-solid) r g b / 0.5) 97vh,
-				// 	rgb(from var(--background-color-solid) r g b / 1) 100vh
-				// ),
-				// url("${basePath}/background.svg")`,
-				// 	}}
+				style={{
+					// backgroundColor: "var(--background-color-solid)",
+					backgroundSize: "160px",
+					backgroundPosition: "top",
+					backgroundImage: `
+				url("${basePath}/img/background-grid.png")`,
+				}}
 			>
 				<Navbar></Navbar>
 				{children}
