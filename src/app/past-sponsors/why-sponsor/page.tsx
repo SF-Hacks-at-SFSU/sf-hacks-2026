@@ -2,7 +2,7 @@ import "./styles.css";
 
 export default function WhySponsorPage() {
 	return (
-		<main className="mt-20 md:mt-0 md:px-4 flex flex-col gap-4 md:gap-8  items-center">
+		<main className="mt-20 md:mt-0 md:px-4 flex flex-col gap-4 md:gap-8 items-center">
 			<h1 className="text-white text-3xl md:text-4xl font-audiowide font-bold">
 				Why Sponsor Us?
 			</h1>
@@ -53,7 +53,7 @@ export default function WhySponsorPage() {
 			</div>
 
 			<div className="flex flex-col gap-2 md:gap-4 justify-end items-center md:mt-10">
-				<h2 className="bg-sfyellow text-white text-lg md:text-2xl">
+				<h2 className="bg-sfyellow text-white text-lg md:text-2xl font-audiowide">
 					Ready to Inspire Innovation?
 				</h2>
 				<p className="px-4">
