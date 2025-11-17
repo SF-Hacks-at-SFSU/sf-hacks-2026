@@ -7,7 +7,7 @@ import Navbar from "./globalComponents/NavBar";
 // const anaheim = Anaheim({ subsets: ["latin"], weight: ["400", "700"], display: "swap" });
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 export const metadata = {
-	title: "SF Hacks 2025",
+	title: "SF Hacks 2026",
 	description: "Bigger, Better, with more Air Fryers",
 	icons: {
 		// I honestly don't have a good reason to use ico files here but might as well
