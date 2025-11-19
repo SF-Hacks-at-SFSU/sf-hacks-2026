@@ -119,7 +119,17 @@ const members: aboutUsTypes.member[] = [
 	{
 		name: "Jim",
 		img: "/team/jim.jpg",
-		link: "https://www.linkedin.com",
+		link: "https://www.linkedin.com/in/ymc9298",
+	},
+	{
+		name: "Arpan",
+		img: "/team/Arpan.jpg",
+		link: "https://www.linkedin.com/in/arpan-savani-0923b8292/",
+	},
+	{
+		name: "Atiksha",
+		img: "/team/Atiksha.jpeg",
+		link: "https://www.linkedin.com/in/atiksha-antil-1677142b0",
 	},
 ];
 
@@ -148,6 +158,8 @@ enum membersEnum {
 	Palak,
 	Sophia,
 	Jim,
+	Arpan,
+	Atiksha,
 }
 
 const teams: aboutUsTypes.team[] = [
@@ -192,7 +204,13 @@ const teams: aboutUsTypes.team[] = [
 	},
 	{
 		name: "Outreach",
-		memberIndices: [membersEnum.Om, membersEnum.Said, membersEnum.Kareem],
+		memberIndices: [
+			membersEnum.Om,
+			membersEnum.Said,
+			membersEnum.Kareem,
+			membersEnum.Arpan,
+			membersEnum.Atiksha,
+		],
 	},
 	{
 		name: "Publicity",
