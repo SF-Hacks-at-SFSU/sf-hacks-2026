@@ -21,7 +21,7 @@ const sponsorsByTier = Object.values(sponsorTier).reduce(
 
 export default function PastSponsorsPage() {
 	return (
-		<main className="w-full px-6 sm:px-8 md:px-12 lg:px-16 py-12 bg-[#030528] text-center">
+		<main className="w-full px-6 sm:px-8 md:px-12 lg:px-16 py-12 text-center">
 			<h1 className="font-audiowide text-white text-3xl md:text-4xl mb-3">
 				Our Past Sponsors
 			</h1>
