@@ -62,7 +62,7 @@ Learn more about tailwind preflight here: https://tailwindcss.com/docs/preflight
 }
 
 :root {
-	--border-radius: 0.625rem;
+	--border-radius: 4px;
 
 	--padding-inline-default: 1em;
 	--padding-block-default: 0.3em;
@@ -147,6 +147,11 @@ Learn more about tailwind preflight here: https://tailwindcss.com/docs/preflight
 
 		background-color: var(--background-color-element-opaque);
 	}
+
+	.button {
+		@apply bg-[#6FD9FF] font-audiowide rounded-xl px-6 md:px-7 py-1.5 text-xs md:text-sm text-[#43457F];
+	}
+	
 	.card {
 		padding: 0;
 		> h1,

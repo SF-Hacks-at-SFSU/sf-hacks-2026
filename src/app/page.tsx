@@ -4,7 +4,7 @@ export default function Home() {
 	return (
 		<main
 			id="home"
-			className="relative min-h-[100svh] md:min-h-screen overflow-hidden bg-[#030528]"
+			className="relative min-h-[100svh] md:min-h-screen overflow-hidden"
 		>
 			<div
 				className="
