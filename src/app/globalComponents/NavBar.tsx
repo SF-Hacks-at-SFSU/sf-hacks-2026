@@ -9,6 +9,8 @@ const NAV_LINKS = [
 	{ name: "About Us", href: "/about-us", newTab: false },
 	{ name: "Sponsors", href: "/past-sponsors", newTab: false },
 	{ name: "FAQs", href: "/faqs", newTab: false },
+	{ name: "Judges", href: "https://tally.so/r/GxxKpL", newTab: true },
+	{ name: "Mentors", href: "https://tally.so/r/Gx6BMk", newTab: true },
 ];
 
 const REGISTER_LINK = {
