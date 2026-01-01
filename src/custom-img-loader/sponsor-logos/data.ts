@@ -1,13 +1,13 @@
 export type SponsorsDatum = {
-	name: string
-	path: string
-	isCurrent: boolean
+	name: string;
+	path: string;
+	isCurrent: boolean;
 
-	tier?: SponsorTier
-	url?: string
-}
+	tier?: SponsorTier;
+	url?: string;
+};
 
-export type SponsorTier = (typeof sponsorTier)[keyof (typeof sponsorTier)]
+export type SponsorTier = (typeof sponsorTier)[keyof typeof sponsorTier];
 
 export const sponsorTier = {
 	platinum: "platinum",
@@ -15,7 +15,7 @@ export const sponsorTier = {
 	silver: "silver",
 	bronze: "bronze",
 	specialThanks: "specialThanks",
-} as const
+} as const;
 
 const data: SponsorsDatum[] = [
 	{
@@ -24,7 +24,7 @@ const data: SponsorsDatum[] = [
 		isCurrent: false,
 
 		tier: "gold",
-		url: "https://www.browserbase.com/"
+		url: "https://www.browserbase.com/",
 	},
 	{
 		name: "SFSU Department of Computer Science",
@@ -33,7 +33,7 @@ const data: SponsorsDatum[] = [
 
 		tier: "gold",
 		// This link was grapped directly from their page because I couldn't find it in the Notion document
-		url: "https://cs.sfsu.edu"
+		url: "https://cs.sfsu.edu",
 	},
 	{
 		name: "Gilead Sciences",
@@ -42,7 +42,7 @@ const data: SponsorsDatum[] = [
 
 		tier: "gold",
 		// This link was grapped directly from their page because I couldn't find it in the Notion document
-		url: "https://www.gilead.com"
+		url: "https://www.gilead.com",
 	},
 	{
 		name: "SFSU College of Science and Engineering",
@@ -51,7 +51,7 @@ const data: SponsorsDatum[] = [
 
 		tier: "gold",
 		// This link was grapped directly from their page because I couldn't find it in the Notion document
-		url: "https://cose.sfsu.edu"
+		url: "https://cose.sfsu.edu",
 	},
 	{
 		name: "Innovation & Entrepreneurship at San Francisco State University",
@@ -59,7 +59,7 @@ const data: SponsorsDatum[] = [
 		isCurrent: false,
 
 		tier: "silver",
-		url: "https://cob.sfsu.edu/initiatives-centers/innovation-entrepreneurship-programs"
+		url: "https://cob.sfsu.edu/initiatives-centers/innovation-entrepreneurship-programs",
 	},
 	{
 		name: "TensorStax",
@@ -67,15 +67,15 @@ const data: SponsorsDatum[] = [
 		isCurrent: false,
 
 		tier: "silver",
-		url: "https://tensorstax.com/"
+		url: "https://tensorstax.com/",
 	},
 	{
 		name: "Management Leadership for Tomorrow",
 		path: "/sponsor-logos/current/MLT.png",
-		isCurrent: false,
+		isCurrent: true,
 
 		tier: "bronze",
-		url: "https://mlt.org/career-prep/"
+		url: "https://mlt.org/career-prep/",
 	},
 	{
 		name: "Inductive Automation",
@@ -84,7 +84,7 @@ const data: SponsorsDatum[] = [
 
 		tier: "bronze",
 		// This link was grapped directly from their page because I couldn't find it in the Notion document
-		url: "https://inductiveautomation.com"
+		url: "https://inductiveautomation.com",
 	},
 	{
 		name: "CodePath",
@@ -92,7 +92,7 @@ const data: SponsorsDatum[] = [
 		isCurrent: false,
 
 		tier: "bronze",
-		url: "https://www.codepath.org"
+		url: "https://www.codepath.org",
 	},
 	//
 	{
@@ -101,7 +101,7 @@ const data: SponsorsDatum[] = [
 		isCurrent: false,
 
 		tier: "bronze",
-		url: "https://www.codepath.org"
+		url: "https://www.codepath.org",
 	},
 	//
 	{
@@ -110,7 +110,7 @@ const data: SponsorsDatum[] = [
 		isCurrent: false,
 
 		tier: "bronze",
-		url: "https://momen.app"
+		url: "https://momen.app",
 	},
 	//
 	{
@@ -119,7 +119,7 @@ const data: SponsorsDatum[] = [
 		isCurrent: false,
 
 		tier: "specialThanks", // idk what an a la carte sponsorship level is but imma jsut put bronze
-		url: "https://www.fastly.com/"
+		url: "https://www.fastly.com/",
 	},
 	{
 		name: "StandOut Stickers",
@@ -128,7 +128,7 @@ const data: SponsorsDatum[] = [
 
 		tier: "specialThanks",
 		// This link was grapped directly from their page because I couldn't find it in the Notion document
-		url: "http://hackp.ac/mlh-StandOutStickers-hackathons"
+		url: "http://hackp.ac/mlh-StandOutStickers-hackathons",
 	},
 	{
 		name: "Associated Students",
@@ -137,7 +137,7 @@ const data: SponsorsDatum[] = [
 
 		tier: "specialThanks",
 		// This link was grapped directly from their page because I couldn't find it in the Notion document
-		url: "https://asi.sfsu.edu"
+		url: "https://asi.sfsu.edu",
 	},
 	{
 		name: "Association for Computing Machinery",
@@ -146,7 +146,7 @@ const data: SponsorsDatum[] = [
 
 		tier: "specialThanks",
 		// This link was grapped directly from their page because I couldn't find it in the Notion document
-		url: "https://www.instagram.com/acm.sfsu"
+		url: "https://www.instagram.com/acm.sfsu",
 	},
 	{
 		name: "Lam Family College Of Business at San Francisco State University",
@@ -155,7 +155,7 @@ const data: SponsorsDatum[] = [
 
 		tier: "specialThanks",
 		// This link was grapped directly from their page because I couldn't find it in the Notion document
-		url: "https://cob.sfsu.edu"
+		url: "https://cob.sfsu.edu",
 	},
 	{
 		name: "Dead Eye Coffee Bar",
@@ -164,7 +164,7 @@ const data: SponsorsDatum[] = [
 
 		tier: "specialThanks",
 		// This link was grapped directly from their page because I couldn't find it in the Notion document
-		url: "https://deadeyecoffeebar.com"
+		url: "https://deadeyecoffeebar.com",
 	},
 	{
 		name: "SFSU Game Development Club",
@@ -172,7 +172,7 @@ const data: SponsorsDatum[] = [
 		isCurrent: false,
 
 		tier: "specialThanks",
-		url: undefined
+		url: undefined,
 	},
 	{
 		name: "SFSU Computer Science Research",
@@ -180,7 +180,7 @@ const data: SponsorsDatum[] = [
 		isCurrent: false,
 
 		tier: "specialThanks",
-		url: undefined
+		url: undefined,
 	},
 	{
 		name: "SFSU Algorithms Club",
@@ -188,7 +188,7 @@ const data: SponsorsDatum[] = [
 		isCurrent: false,
 
 		tier: "specialThanks",
-		url: undefined
+		url: undefined,
 	},
 	{
 		name: "SFSU Bit Bots Club",
@@ -196,7 +196,7 @@ const data: SponsorsDatum[] = [
 		isCurrent: false,
 
 		tier: "specialThanks",
-		url: undefined
+		url: undefined,
 	},
 	{
 		name: "SFSU Society of Women Engineers",
@@ -204,7 +204,7 @@ const data: SponsorsDatum[] = [
 		isCurrent: false,
 
 		tier: "specialThanks",
-		url: undefined
+		url: undefined,
 	},
 	{
 		name: "SFSU ColorStack Club",
@@ -212,7 +212,7 @@ const data: SponsorsDatum[] = [
 		isCurrent: false,
 
 		tier: "specialThanks",
-		url: undefined
+		url: undefined,
 	},
 	{
 		name: "SFSU Cybersecurity Club",
@@ -220,7 +220,7 @@ const data: SponsorsDatum[] = [
 		isCurrent: false,
 
 		tier: "specialThanks",
-		url: undefined
+		url: undefined,
 	},
 
 	{
@@ -229,7 +229,7 @@ const data: SponsorsDatum[] = [
 		isCurrent: false,
 
 		tier: "specialThanks",
-		url: undefined
+		url: undefined,
 	},
 	{
 		name: "SFSU SparkSF Club",
@@ -237,7 +237,7 @@ const data: SponsorsDatum[] = [
 		isCurrent: false,
 
 		tier: "specialThanks",
-		url: undefined
+		url: undefined,
 	},
 	{
 		name: "SFSU Data Science Society",
@@ -245,7 +245,7 @@ const data: SponsorsDatum[] = [
 		isCurrent: false,
 
 		tier: "specialThanks",
-		url: undefined
+		url: undefined,
 	},
 	{
 		name: "Delta Sigma Pi Delta Omicron",
@@ -253,9 +253,25 @@ const data: SponsorsDatum[] = [
 		isCurrent: false,
 
 		tier: "specialThanks",
-		url: undefined
+		url: undefined,
+	},
+	{
+		name: "Broxi",
+		path: "/sponsor-logos/current/broxi.png",
+		isCurrent: true,
+
+		tier: "silver",
+		url: "https://broxi.ai",
 	},
 
-] as const
+	{
+		name: "Medsender",
+		path: "/sponsor-logos/current/MedSender.png",
+		isCurrent: true,
 
-export default data
+		tier: "silver",
+		url: "https://medsender.com",
+	},
+] as const;
+
+export default data;
