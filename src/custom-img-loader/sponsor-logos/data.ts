@@ -74,7 +74,7 @@ const data: SponsorsDatum[] = [
 		path: "/sponsor-logos/current/MLT.png",
 		isCurrent: true,
 
-		tier: "bronze",
+		tier: "silver",
 		url: "https://mlt.org/career-prep/",
 	},
 	{
@@ -131,16 +131,6 @@ const data: SponsorsDatum[] = [
 	},
 
 	{
-		name: "Association for Computing Machinery",
-		path: "/sponsor-logos/current/ACM.svg",
-		isCurrent: true,
-
-		tier: "specialThanks",
-		// This link was grapped directly from their page because I couldn't find it in the Notion document
-		url: "https://www.instagram.com/acm.sfsu",
-	},
-
-	{
 		name: "Broxi",
 		path: "/sponsor-logos/current/broxi.png",
 		isCurrent: true,
@@ -156,6 +146,16 @@ const data: SponsorsDatum[] = [
 
 		tier: "silver",
 		url: "https://medsender.com",
+	},
+
+	{
+		name: "Association for Computing Machinery",
+		path: "/sponsor-logos/current/ACM.svg",
+		isCurrent: true,
+
+		tier: "silver",
+		// This link was grapped directly from their page because I couldn't find it in the Notion document
+		url: "https://www.instagram.com/acm.sfsu",
 	},
 ] as const;
 
