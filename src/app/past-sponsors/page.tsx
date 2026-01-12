@@ -63,32 +63,6 @@ export default function PastSponsorsPage() {
 					Past Sponsors
 				</h2>
 
-				<section
-					className="
-          w-full flex justify-center mb-10 
-          pt-16 sm:pt-20 md:pt-24 lg:pt-28
-          transition-all duration-300
-        "
-				>
-					<div className="w-full max-w-3xl md:max-w-4xl lg:max-w-5xl">
-						<a
-							href="https://openmind.org"
-							target="_blank"
-							className=" cursor-pointer "
-						>
-							<Image
-								src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/sponsor-logos/current/OpenMind.svg`}
-								alt="OpenMind — Title Sponsor"
-								width={1600}
-								height={600}
-								priority
-								className="w-full h-auto mx-auto hover:scale-105 transition delay-200"
-								sizes="(max-width: 640px) 90vw, (max-width: 1024px) 70vw, 60vw"
-							/>
-						</a>
-					</div>
-				</section>
-
 				{Object.keys(pastSponsorsByTier).map((tierKey) => {
 					const data = pastSponsorsByTier[tierKey as SponsorTier];
 					if (data.length === 0) return null;
