@@ -87,6 +87,24 @@ const data: SponsorsDatum[] = [
 		url: "https://inductiveautomation.com",
 	},
 	{
+		name: "Upstreman",
+		path: "/sponsor-logos/current/Upstreman.svg",
+		isCurrent: true,
+
+		tier: "silver",
+		// This link was grapped directly from their page because I couldn't find it in the Notion document
+		url: "https://upstreman.com/?srsltid=AfmBOooqXIFFsE-m_iQKQWUaZZVhix8ezsJ-VKsRx4SuqYz5a-r3he0t",
+	},
+	{
+		name: "Backboard",
+		path: "/sponsor-logos/current/Backboard.svg",
+		isCurrent: true,
+
+		tier: "silver",
+		// This link was grapped directly from their page because I couldn't find it in the Notion document
+		url: "https://backboard.io",
+	},
+	{
 		name: "CodePath",
 		path: "/sponsor-logos/current/CodePath.png",
 		isCurrent: false,
