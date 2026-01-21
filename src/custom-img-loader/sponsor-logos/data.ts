@@ -106,11 +106,11 @@ const data: SponsorsDatum[] = [
 	},
 	{
 		name: "JFF Ventures",
-		path: "/sponsor-logos/current/jffVentures.png",
+		path: "/sponsor-logos/current/jffVentures.webp",
 		isCurrent: true,
 
 		tier: "silver",
-		// This link was grapped directly from their page because I couldn't find it in the Notion document
+
 		url: "https://www.jff.org/work/jff-ventures/",
 	},
 
