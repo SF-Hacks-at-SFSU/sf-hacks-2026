@@ -106,7 +106,7 @@ const data: SponsorsDatum[] = [
 	},
 	{
 		name: "JFF Ventures",
-		path: "/sponsor-logos/current/jffVentures.webp",
+		path: "/sponsor-logos/current/jffVentures.png",
 		isCurrent: true,
 
 		tier: "silver",
