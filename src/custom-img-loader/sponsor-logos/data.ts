@@ -105,6 +105,16 @@ const data: SponsorsDatum[] = [
 		url: "https://backboard.io",
 	},
 	{
+		name: "JFF Ventures",
+		path: "/sponsor-logos/current/jffVentures.png",
+		isCurrent: true,
+
+		tier: "silver",
+		// This link was grapped directly from their page because I couldn't find it in the Notion document
+		url: "https://www.jff.org/work/jff-ventures/",
+	},
+
+	{
 		name: "CodePath",
 		path: "/sponsor-logos/current/CodePath.png",
 		isCurrent: false,
