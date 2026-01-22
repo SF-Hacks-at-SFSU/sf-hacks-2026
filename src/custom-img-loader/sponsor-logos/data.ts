@@ -56,9 +56,9 @@ const data: SponsorsDatum[] = [
 	{
 		name: "Innovation & Entrepreneurship at San Francisco State University",
 		path: "/sponsor-logos/current/IE.png",
-		isCurrent: false,
+		isCurrent: true,
 
-		tier: "specialThanks",
+		tier: "silver",
 		url: "https://cob.sfsu.edu/initiatives-centers/innovation-entrepreneurship-programs",
 	},
 	{
