@@ -93,7 +93,7 @@ const data: SponsorsDatum[] = [
 
 		tier: "silver",
 		// This link was grapped directly from their page because I couldn't find it in the Notion document
-		url: "https://upstreman.com/?srsltid=AfmBOooqXIFFsE-m_iQKQWUaZZVhix8ezsJ-VKsRx4SuqYz5a-r3he0t",
+		url: "https://upstreman.com/sfhacks",
 	},
 	{
 		name: "Backboard",
@@ -184,6 +184,14 @@ const data: SponsorsDatum[] = [
 		tier: "silver",
 		// This link was grapped directly from their page because I couldn't find it in the Notion document
 		url: "https://www.instagram.com/acm.sfsu",
+	},
+	{
+		name: "GT's Living Foods",
+		path: "/sponsor-logos/current/kombucha.png",
+		isCurrent: true,
+
+		tier: "silver",
+		url: "https://gtslivingfoods.com/",
 	},
 ] as const;
 
