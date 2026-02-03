@@ -27,6 +27,22 @@ const data: SponsorsDatum[] = [
 		url: "https://www.browserbase.com/",
 	},
 	{
+		name: "Meta",
+		path: "/sponsor-logos/current/Meta.svg",
+		isCurrent: true,
+
+		tier: "silver",
+		url: "https://www.meta.com/",
+	},
+	/*{
+		name: "IBM",
+		path: "/sponsor-logos/current/IBM.png",
+		isCurrent: true,
+
+		tier: "silver",
+		url: "https://www.ibm.com/",
+	},*/
+	{
 		name: "SFSU Department of Computer Science",
 		path: "/sponsor-logos/current/SFSU-CSDepartment.svg",
 		isCurrent: true,
@@ -174,6 +190,14 @@ const data: SponsorsDatum[] = [
 
 		tier: "silver",
 		url: "https://medsender.com",
+	},
+	{
+		name: "Actian",
+		path: "/sponsor-logos/current/Actian.svg",
+		isCurrent: true,
+
+		tier: "silver",
+		url: "https://actian.com",
 	},
 
 	{
