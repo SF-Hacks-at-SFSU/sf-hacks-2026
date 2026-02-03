@@ -225,14 +225,6 @@ const data: SponsorsDatum[] = [
 		tier: "silver",
 		url: "https://crscreditapi.com",
 	},
-	{
-		name: "Actian",
-		path: "/sponsor-logos/current/Actian.svg",
-		isCurrent: true,
-
-		tier: "silver",
-		url: "https://www.actian.com",
-	},
 ] as const;
 
 export default data;
