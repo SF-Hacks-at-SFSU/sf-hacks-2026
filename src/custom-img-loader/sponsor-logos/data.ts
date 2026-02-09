@@ -34,14 +34,14 @@ const data: SponsorsDatum[] = [
 		tier: "silver",
 		url: "https://www.meta.com/",
 	},
-	/*{
+	{
 		name: "IBM",
 		path: "/sponsor-logos/current/IBM.png",
 		isCurrent: true,
 
 		tier: "silver",
 		url: "https://www.ibm.com/",
-	},*/
+	},
 	{
 		name: "SFSU Department of Computer Science",
 		path: "/sponsor-logos/current/SFSU-CSDepartment.svg",
