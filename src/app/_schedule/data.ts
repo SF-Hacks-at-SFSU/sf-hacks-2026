@@ -1,0 +1,1 @@
+// This used to contain the old SF Hacks 2024 Scheduel Data. This file will be reused to store the new schedule data in the future
