@@ -31,15 +31,24 @@ const data: SponsorsDatum[] = [
 		path: "/sponsor-logos/current/Meta.svg",
 		isCurrent: true,
 
-		tier: "silver",
+		tier: "gold",
 		url: "https://www.meta.com/",
+	},
+	{
+		name: "JFF Ventures",
+		path: "/sponsor-logos/current/JFFVentures1.png",
+		isCurrent: true,
+
+		tier: "gold",
+
+		url: "https://www.jff.org/work/jff-ventures/",
 	},
 	{
 		name: "IBM",
 		path: "/sponsor-logos/current/IBM.png",
 		isCurrent: true,
 
-		tier: "silver",
+		tier: "gold",
 		url: "https://www.ibm.com/",
 	},
 	{
@@ -47,7 +56,7 @@ const data: SponsorsDatum[] = [
 		path: "/sponsor-logos/current/SFSU-CSDepartment.svg",
 		isCurrent: true,
 
-		tier: "silver",
+		tier: "specialThanks",
 		// This link was grapped directly from their page because I couldn't find it in the Notion document
 		url: "https://cs.sfsu.edu",
 	},
@@ -74,7 +83,7 @@ const data: SponsorsDatum[] = [
 		path: "/sponsor-logos/current/IE.png",
 		isCurrent: true,
 
-		tier: "silver",
+		tier: "specialThanks",
 		url: "https://cob.sfsu.edu/initiatives-centers/innovation-entrepreneurship-programs",
 	},
 	{
@@ -90,7 +99,7 @@ const data: SponsorsDatum[] = [
 		path: "/sponsor-logos/current/MLT.png",
 		isCurrent: true,
 
-		tier: "silver",
+		tier: "bronze",
 		url: "https://mlt.org/career-prep/",
 	},
 	{
@@ -107,7 +116,7 @@ const data: SponsorsDatum[] = [
 		path: "/sponsor-logos/current/Upstreman.svg",
 		isCurrent: true,
 
-		tier: "silver",
+		tier: "bronze",
 		// This link was grapped directly from their page because I couldn't find it in the Notion document
 		url: "https://upstreman.com/sfhacks",
 	},
@@ -116,18 +125,9 @@ const data: SponsorsDatum[] = [
 		path: "/sponsor-logos/current/Backboard.svg",
 		isCurrent: true,
 
-		tier: "silver",
+		tier: "bronze",
 		// This link was grapped directly from their page because I couldn't find it in the Notion document
 		url: "https://backboard.io",
-	},
-	{
-		name: "JFF Ventures",
-		path: "/sponsor-logos/current/JFFVentures1.png",
-		isCurrent: true,
-
-		tier: "silver",
-
-		url: "https://www.jff.org/work/jff-ventures/",
 	},
 
 	{
@@ -179,7 +179,7 @@ const data: SponsorsDatum[] = [
 		path: "/sponsor-logos/current/broxi.png",
 		isCurrent: true,
 
-		tier: "silver",
+		tier: "bronze",
 		url: "https://broxi.ai",
 	},
 
@@ -188,7 +188,7 @@ const data: SponsorsDatum[] = [
 		path: "/sponsor-logos/current/MedSender.png",
 		isCurrent: true,
 
-		tier: "silver",
+		tier: "bronze",
 		url: "https://medsender.com",
 	},
 	{
@@ -196,7 +196,7 @@ const data: SponsorsDatum[] = [
 		path: "/sponsor-logos/current/Actian.svg",
 		isCurrent: true,
 
-		tier: "silver",
+		tier: "gold",
 		url: "https://actian.com",
 	},
 
@@ -205,7 +205,7 @@ const data: SponsorsDatum[] = [
 		path: "/sponsor-logos/current/ACM.svg",
 		isCurrent: true,
 
-		tier: "silver",
+		tier: "specialThanks",
 		// This link was grapped directly from their page because I couldn't find it in the Notion document
 		url: "https://www.instagram.com/acm.sfsu",
 	},
@@ -214,12 +214,12 @@ const data: SponsorsDatum[] = [
 		path: "/sponsor-logos/current/kombucha.png",
 		isCurrent: true,
 
-		tier: "silver",
+		tier: "specialThanks",
 		url: "https://gtslivingfoods.com/",
 	},
 	{
 		name: "CRS",
-		path: "/sponsor-logos/current/CRS.svg",
+		path: "/sponsor-logos/current/crs2.svg",
 		isCurrent: true,
 
 		tier: "silver",
