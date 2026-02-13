@@ -129,6 +129,14 @@ const data: SponsorsDatum[] = [
 		// This link was grapped directly from their page because I couldn't find it in the Notion document
 		url: "https://backboard.io",
 	},
+	{
+		name: "Shipyard",
+		path: "/sponsor-logos/current/shipyard-sfhacks-logo.png",
+		isCurrent: true,
+
+		tier: "bronze",
+		url: "https://shipyard.tech/",
+	},
 
 	{
 		name: "CodePath",
