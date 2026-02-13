@@ -135,7 +135,7 @@ const data: SponsorsDatum[] = [
 		isCurrent: true,
 
 		tier: "bronze",
-		url: "https://shipyard.tech/",
+		url: "https://shipyardhq.tech/",
 	},
 
 	{
