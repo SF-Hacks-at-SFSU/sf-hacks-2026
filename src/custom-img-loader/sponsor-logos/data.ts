@@ -219,7 +219,7 @@ const data: SponsorsDatum[] = [
 	},
 	{
 		name: "CRS",
-		path: "/sponsor-logos/current/crs2.svg",
+		path: "/sponsor-logos/current/CRS2.svg",
 		isCurrent: true,
 
 		tier: "silver",
